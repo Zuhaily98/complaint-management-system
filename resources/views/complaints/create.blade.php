@@ -16,7 +16,7 @@
         </div>
         <div class="container">
             <div class="card card-default">
-                <div class="card-header">Select Panel</div>
+                <div class="card-header bg-danger text-white">Select Panel</div>
                 <div class="card-body">
                     <div class="form-group">
                         <label for="type">Type :</label>
@@ -61,7 +61,7 @@
             </div>
 
             <div class="card card-default my-3">
-                <div class="card-header">Complaint Details</div>
+                <div class="card-header bg-danger text-white">Complaint Details</div>
                 <div class="card-body">
                     <div class="form-group">
                         <label for="">Category :</label>
@@ -84,7 +84,7 @@
             </div>
 
             <div class="card card-default my-3">
-                <div class="card-header">Complainer Information</div>
+                <div class="card-header bg-danger text-white">Complainer Information</div>
                 <div class="card-body">
                     <div class="form-group">
                         <label for="">Name</label>

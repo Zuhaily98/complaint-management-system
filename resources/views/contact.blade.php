@@ -1,39 +1,34 @@
 @extends('layouts.guest')
 
 @section('content')
-    <div class="section contact_section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 theme_color_bg fc3726 padding_0">
-                    <div class="full">
-                        <div class="row">
-                            <div class="col-sm-12 col-md-10 offset-lg-1">
-                                <div class="full contact_form">
-                                    <form class="contact_form_inner" action="#">
-                                        <fieldset>
-                                            <div class="field">
-                                                <input type="text" name="name" placeholder="Your name" />
-                                            </div>
-                                            <div class="field">
-                                                <input type="email" name="email" placeholder="Email" />
-                                            </div>
-                                            <div class="field">
-                                                <input type="text" name="phone_no" placeholder="Phone number" />
-                                            </div>
-                                            <div class="field">
-                                                <textarea placeholder="Message"></textarea>
-                                            </div>
-                                            <div class="field center">
-                                                <button class="margin-top_30">SEND</button>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-danger text-white"><i class="fa fa-envelope"></i> Contact us.
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name" required>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="6" required></textarea>
+                        </div>
+                        <div class="mx-auto">
+                        <button type="submit" class="btn btn-primary text-right">Submit</button></div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
 @endsection

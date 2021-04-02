@@ -21,8 +21,8 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+        <div class="row justify-content-center">
+            <div class="col col-lg-3">
                 <div class="full feature_box">
                     <div class="full icon">
                         <img class="default-block" style="width: 40%" src="http://cdn.onlinewebfonts.com/svg/img_319563.png"
@@ -42,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="col col-lg-3">
                 <div class="full feature_box">
                     <div class="full icon">
                         <img class="default-block" style="width: 35%"
@@ -63,26 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-                <div class="full feature_box">
-                    <div class="full icon">
-                        <img class="default-block" style="width: 40%"
-                            src="https://www.pngarts.com/files/10/Vector-Email-Icon-PNG-Transparent-Image.png" alt="#" />
-                        <img class="default-none" style="width: 45%"
-                            src="https://www.pngarts.com/files/10/Vector-Email-Icon-PNG-Transparent-Image.png" alt="#" />
-                    </div>
-                    <div class="full">
-                        <h4>Get Notified Via Email</h4>
-                    </div>
-                    <div class="full">
-                        <p>It is a long established fact that a reader will be distracted by the readable content..</p>
-                    </div>
-                    <div class="one">
-                     <a href="/contact" class="btn btn-outline-secondary">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <div class="col col-lg-3">
                 <div class="full feature_box">
                     <div class="full icon">
                         <img class="default-block" style="width: 40%"
@@ -97,7 +78,7 @@
                         <p>It is a long established fact that a reader will be distracted by the readable content..</p>
                     </div>
                     <div class="one">
-                     <button class="btn btn-outline-secondary">About Us</button>
+                     <a href="/contact" class="btn btn-outline-secondary">Contact Us</a>
                     </div>
                 </div>
             </div>

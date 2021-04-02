@@ -9,7 +9,7 @@
                         <h2>Search Your Complaint</h2>
                     </div>
                     <div class="heading_main text_align_center">
-                        <h3>Search complaint with your unique complaint ID. The ID were sent to your email
+                        <h3>Search complaint with your unique complaint ID. The ID were sent to your email. Click <a class="stretched-link text-danger" href="{{ route('complaints.create') }}"> here </a> if you want to create a new complaint
                         </h3>
                     </div>
                 </div>
@@ -17,7 +17,7 @@
         </div>
         <div class="container">
             <div class="card card-default">
-                <div class="card-header">Search Complaint</div>
+                <div class="card-header bg-danger text-white">Search Complaint</div>
                 <div class="card-body">
                     <div class="form-group">
                         <label for="search">Search Complaint ID :</label>
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="card card-default my-2">
-                <div class="card-header">Result</div>
+                <div class="card-header bg-danger text-white">Result</div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
