@@ -11,6 +11,13 @@
                     <div class="heading_main text_align_center">
                         <h3>What You Can Do</h3>
                     </div>
+                    <div class="heading_main text_align_center">
+                       <div class="one">
+                          <a href="{{ route('complaints.create') }}" class="btn btn-outline-success">Create a Complaint</a>
+                          <a href="{{ route('complaints.index') }}" class="btn btn-outline-info">Search your Complaint</a>
+                          <a href="/contact" class="btn btn-outline-danger">Contact Us</a>
+                       </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -30,6 +37,9 @@
                         <p>You can create complaints about any malfunction regarding TV display at any panel that are
                             registered with MedKAD</p>
                     </div>
+                    <div class="one">
+                     <a href="{{route('complaints.create')}}" class="btn btn-outline-secondary">Create Complaint</a>
+                    </div>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
@@ -46,7 +56,10 @@
                         <h4>Search Your Complaint</h4>
                     </div>
                     <div class="full">
-                        <p>It is a long established fact that a reader will be distracted by the readable content..</p>
+                        <p>It is a long fact that a reader will be distracted by the readable content..</p>
+                    </div>
+                    <div class="one">
+                     <a href="{{ route('complaints.index') }}" class="btn btn-outline-secondary">Search Complaint</a>
                     </div>
                 </div>
             </div>
@@ -64,6 +77,9 @@
                     <div class="full">
                         <p>It is a long established fact that a reader will be distracted by the readable content..</p>
                     </div>
+                    <div class="one">
+                     <a href="/contact" class="btn btn-outline-secondary">Contact Us</a>
+                    </div>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
@@ -79,6 +95,9 @@
                     </div>
                     <div class="full">
                         <p>It is a long established fact that a reader will be distracted by the readable content..</p>
+                    </div>
+                    <div class="one">
+                     <button class="btn btn-outline-secondary">About Us</button>
                     </div>
                 </div>
             </div>

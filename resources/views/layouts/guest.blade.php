@@ -148,19 +148,19 @@
                 
                 <div class="col-lg-3 col-md-6 col-sm-6 white_fonts">
                    <div class="full footer_blog f_icon_1">
-                       <p>Address<br><small>151 Ho Ba Kien Street,<br>Ward 15, District 10,<br>Ho Chi Minh City, Vietnam</small></p>
+                       <p>Address<br><small>No.117 Block 3, No.7 Persiaran Sukan<br>Laman Seri Business Park, Seksyen 13,<br>40100 Shah Alam, Malaysia.</small></p>
                    </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 white_fonts">
                    <div class="full footer_blog f_icon_2">
-                      <p>Phone<br><small>+84 126 922 0162<br>+84 905 333 333<br>Monday - Sunday<br>08:00 am - 05:00 pm</small></p>
+                      <p>Phone<br><small>03 8686 8869<br>03 8686 8869<br>Monday - Sunday<br>09:00 am - 06:00 pm</small></p>
                    </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 white_fonts">
                    <div class="full footer_blog f_icon_3">
-                       <p>Email<br><small>support@sofbox.com<br>24 X 7 online support</small></p>
+                       <p>Email<br><small>mymedkad@medkad.com<br>24 X 7 online support</small></p>
                    </div>
                 </div>
 
@@ -183,15 +183,6 @@
           </div>
        </footer>
        <!-- End Footer -->
-       <div class="footer_bottom">
-          <div class="container">
-             <div class="row">
-                <div class="col-12">
-                   <p class="crp">© Copyrights 2019 design by <a href="https://html.design" title="Free Website Templates">Free Website Templates</a></p>
-                </div>
-             </div>
-          </div>
-       </div>
     </div>
     <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
  </body>
