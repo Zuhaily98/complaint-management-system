@@ -165,15 +165,9 @@
 
                 <div class="col-lg-3 col-md-6 col-sm-6 white_fonts">
                    <div class="full footer_blog_last">
-                       <p>Social media</p>
+                       <p>Admin Login</p>
                        <p>
-                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                         </ul>
+                         <a href="/login" class="btn btn-primary btn-sm">Login</a>
                        </p>
                    </div>
                 </div>
