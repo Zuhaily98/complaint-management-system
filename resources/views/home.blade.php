@@ -9,7 +9,7 @@
                         <h2>WELCOME TO {{ config('app.name', 'Laravel') }}</h2>
                     </div>
                     <div class="heading_main text_align_center">
-                        <h3>What You Can Do</h3>
+                        <h3>What You Can Do.</h3>
                     </div>
                     <div class="heading_main text_align_center">
                        <div class="one">
