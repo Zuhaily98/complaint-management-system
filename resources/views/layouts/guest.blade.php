@@ -38,9 +38,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    {{-- <!-- Site Icons -->
-    <link rel="shortcut icon" href="#" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="#" /> --}}
+     <!-- Site Icons -->
+    <link rel="shortcut icon" href="https://res-4.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco/o0yvvdlumh0rghybj9kx" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="#" /> 
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />

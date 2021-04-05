@@ -19,7 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::resource('/complaints', 'ComplaintController');
 Route::get('/contact', 'ComplaintController@contact')->name('complaints.contact');
+
+
+//admin
+Route::get('/admin/account-profile', 'AdminController@profile')->name('admin.profile');
+Route::get('/admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+
+
