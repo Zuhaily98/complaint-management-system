@@ -102,9 +102,9 @@
     <nav id="sidebar">
        <div class="menu_section">
           <ul>
-             <li><a href="/home">Home</a></li>
+             <li><a href="/">Home</a></li>
              <li><a href="{{ route('complaints.index') }}">Complaint</a></li>
-             <li><a href="/contact">Contact us</a></li>
+             <li><a href="{{ route('complaints.contact') }}">Contact us</a></li>
           </ul>
        </div>
     </nav>
@@ -115,7 +115,7 @@
              <div class="row">
                 <div class="col-sm-6">
                    <div class="logo_main">
-                      <a href="/home"><img style="width:15%" src="https://res-4.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco/o0yvvdlumh0rghybj9kx" /></a>
+                      <a href="/"><img style="width:15%" src="https://res-4.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco/o0yvvdlumh0rghybj9kx" /></a>
                    </div>
                 </div>
                 <div class="col-sm-6">

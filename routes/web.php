@@ -23,3 +23,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/contact', 'HomeController@contact');
 
 Route::resource('/complaints', 'ComplaintController');
+Route::get('/contact', 'ComplaintController@contact')->name('complaints.contact');

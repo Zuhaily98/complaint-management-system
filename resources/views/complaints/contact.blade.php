@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col">
             <div class="card">
-                <div class="card-header bg-danger text-white"><i class="fa fa-envelope"></i> Contact us.
+                <div class="card-header bg-danger text-white"><i class="fa fa-envelope"></i> Contact Us.
                 </div>
                 <div class="card-body">
                     <form>
