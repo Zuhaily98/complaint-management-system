@@ -1,5 +1,9 @@
 @extends('admin.main')
 
+@section('title')
+    Dashboard :: Complaint Management System
+@endsection
+
 @section('content')
     <main>
         <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">

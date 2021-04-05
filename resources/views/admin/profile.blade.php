@@ -1,5 +1,9 @@
 @extends('admin.main')
 
+@section('title')
+    Profile :: Complaint Management System
+@endsection
+
 @section('content')
     <main>
         <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
@@ -21,9 +25,7 @@
             <!-- Account page navigation-->
             <nav class="nav nav-borders">
                 <a class="nav-link active ml-0" href="account-profile.html">Profile</a>
-                <a class="nav-link" href="account-billing.html">Billing</a>
-                <a class="nav-link" href="account-security.html">Security</a>
-                <a class="nav-link" href="account-notifications.html">Notifications</a>
+                <a class="nav-link" href="account-billing.html">Change Password</a>
             </nav>
             <hr class="mt-0 mb-4" />
             <div class="row">
@@ -50,46 +52,15 @@
                             <form>
                                 <!-- Form Group (username)-->
                                 <div class="form-group">
-                                    <label class="small mb-1" for="inputUsername">Username (how your name will appear to
-                                        other users on the site)</label>
+                                    <label class="small mb-1" for="inputUsername">Name</label>
                                     <input class="form-control" id="inputUsername" type="text"
-                                        placeholder="Enter your username" value="username" />
-                                </div>
-                                <!-- Form Row-->
-                                <div class="form-row">
-                                    <!-- Form Group (first name)-->
-                                    <div class="form-group col-md-6">
-                                        <label class="small mb-1" for="inputFirstName">First name</label>
-                                        <input class="form-control" id="inputFirstName" type="text"
-                                            placeholder="Enter your first name" value="Valerie" />
-                                    </div>
-                                    <!-- Form Group (last name)-->
-                                    <div class="form-group col-md-6">
-                                        <label class="small mb-1" for="inputLastName">Last name</label>
-                                        <input class="form-control" id="inputLastName" type="text"
-                                            placeholder="Enter your last name" value="Luna" />
-                                    </div>
-                                </div>
-                                <!-- Form Row        -->
-                                <div class="form-row">
-                                    <!-- Form Group (organization name)-->
-                                    <div class="form-group col-md-6">
-                                        <label class="small mb-1" for="inputOrgName">Organization name</label>
-                                        <input class="form-control" id="inputOrgName" type="text"
-                                            placeholder="Enter your organization name" value="Start Bootstrap" />
-                                    </div>
-                                    <!-- Form Group (location)-->
-                                    <div class="form-group col-md-6">
-                                        <label class="small mb-1" for="inputLocation">Location</label>
-                                        <input class="form-control" id="inputLocation" type="text"
-                                            placeholder="Enter your location" value="San Francisco, CA" />
-                                    </div>
+                                        placeholder="" value="{{ Auth::user()->name }}" />
                                 </div>
                                 <!-- Form Group (email address)-->
                                 <div class="form-group">
                                     <label class="small mb-1" for="inputEmailAddress">Email address</label>
                                     <input class="form-control" id="inputEmailAddress" type="email"
-                                        placeholder="Enter your email address" value="name@example.com" />
+                                        placeholder="Enter your email address" value="{{ Auth::user()->email }}" />
                                 </div>
                                 <!-- Form Row-->
                                 <div class="form-row">
