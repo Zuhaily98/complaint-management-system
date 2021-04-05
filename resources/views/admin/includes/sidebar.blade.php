@@ -29,12 +29,12 @@
                 </a>
                 <div class="collapse" id="collapseDashboards" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="{{ route('admin.dashboard') }}">
                             Default
                             <span class="badge badge-primary-soft text-primary ml-auto">Updated</span>
                         </a>
-                        <a class="nav-link" href="dashboard-2.html">Multipurpose</a>
-                        <a class="nav-link" href="dashboard-3.html">Affiliate</a>
+                        <a class="nav-link" href="#">Multipurpose</a>
+                        <a class="nav-link" href="#">Affiliate</a>
                     </nav>
                 </div>
                 <!-- Sidenav Heading (UI Toolkit)-->
@@ -47,8 +47,8 @@
                 </a>
                 <div class="collapse" id="collapseFlows" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav">
-                        <a class="nav-link" href="multi-tenant-select.html">List of Complaint</a>
-                        <a class="nav-link" href="wizard.html">Search Complaint</a>
+                        <a class="nav-link" href="{{ route('admin.complaints') }}">List of Complaint</a>
+                        <a class="nav-link" href="#">Search Complaint</a>
                     </nav>
                 </div>
                 <!-- Sidenav Heading (App Views)-->
