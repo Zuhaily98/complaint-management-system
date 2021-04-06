@@ -81,7 +81,7 @@
                             <nav class="sidenav-menu-nested nav">
                                 <a class="nav-link" href="{{ route('admin.create-admin') }}">Create Admin Account</a>
                                 <a class="nav-link" href="{{ route('admin.create-officer') }}">Create Officer Account</a>
-                                <a class="nav-link" href="auth-password-basic.html">View All Account</a>
+                                <a class="nav-link" href="{{ route('admin.users') }}">View All Account</a>
                             </nav>
                         </div>
                     </nav>

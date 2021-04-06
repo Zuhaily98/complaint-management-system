@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    public function usersIndex()
+    {
+        return view('admin.accounts.index');
+    }
+
     public function profile()
     {
         return view('admin.accounts.profile');
