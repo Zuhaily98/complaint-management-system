@@ -1,7 +1,7 @@
 @extends('admin.main')
 
 @section('title')
-    Profile :: Complaint Management System
+    Create Admin :: Complaint Management System
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
                         <div class="col-auto mb-3">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="user"></i></div>
-                                Account Settings - Profile
+                                Create Administrator Account   
                             </h1>
                         </div>
                     </div>
@@ -24,11 +24,51 @@
         <div class="container mt-4">
             <!-- Account page navigation-->
             <nav class="nav nav-borders">
-                <a class="nav-link active ml-0" href="{{ route('admin.profile') }}">Profile</a>
-                <a class="nav-link" href="{{ route('admin.profile-password') }}">Change Password</a>
+                <a class="nav-link active ml-0" href="{{ route('admin.create-admin') }}">Create Admin Account</a>
+                <a class="nav-link" href="{{ route('admin.profile-password') }}">Create Officer Account</a>
+                <a class="nav-link" href="{{ route('admin.profile-password') }}">View All Account</a>
             </nav>
             <hr class="mt-0 mb-4" />
             <div class="row">
+                <div class="col-xl-8">
+                    <!-- Account details card-->
+                    <div class="card mb-4">
+                        <div class="card-header">Account Details</div>
+                        <div class="card-body">
+                            <form>
+                                <!-- Form Group (username)-->
+                                <div class="form-group">
+                                    <label class="small mb-1" for="inputUsername">Name</label>
+                                    <input class="form-control" id="inputUsername" type="text" placeholder="Enter Name"
+                                        value="" />
+                                </div>
+                                <!-- Form Group (email address)-->
+                                <div class="form-group">
+                                    <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                                    <input class="form-control" id="inputEmailAddress" type="email"
+                                        placeholder="Enter email address" value="" />
+                                </div>
+                                <!-- Form Row-->
+                                <div class="form-row">
+                                    <!-- Form Group (phone number)-->
+                                    <div class="form-group col-md-6">
+                                        <label class="small mb-1" for="inputPhone">Phone number</label>
+                                        <input class="form-control" id="inputPhone" type="tel"
+                                            placeholder="Enter phone number" value="" />
+                                    </div>
+                                    <!-- Form Group (birthday)-->
+                                    <div class="form-group col-md-6">
+                                        <label class="small mb-1" for="inputBirthday">Birthday</label>
+                                        <input class="form-control" id="inputBirthday" type="text" name="birthday"
+                                            placeholder="Enter birthday" value="" />
+                                    </div>
+                                </div>
+                                <!-- Save changes button-->
+                                <button class="btn btn-primary" type="button">Create New Admin</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-xl-4">
                     <!-- Profile picture card-->
                     <div class="card">
@@ -44,47 +84,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-8">
-                    <!-- Account details card-->
-                    <div class="card mb-4">
-                        <div class="card-header">Account Details</div>
-                        <div class="card-body">
-                            <form>
-                                <!-- Form Group (username)-->
-                                <div class="form-group">
-                                    <label class="small mb-1" for="inputUsername">Name</label>
-                                    <input class="form-control" id="inputUsername" type="text" placeholder=""
-                                        value="{{ Auth::user()->name }}" />
-                                </div>
-                                <!-- Form Group (email address)-->
-                                <div class="form-group">
-                                    <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                    <input class="form-control" id="inputEmailAddress" type="email"
-                                        placeholder="Enter your email address" value="{{ Auth::user()->email }}" />
-                                </div>
-                                <!-- Form Row-->
-                                <div class="form-row">
-                                    <!-- Form Group (phone number)-->
-                                    <div class="form-group col-md-6">
-                                        <label class="small mb-1" for="inputPhone">Phone number</label>
-                                        <input class="form-control" id="inputPhone" type="tel"
-                                            placeholder="Enter your phone number" value="555-123-4567" />
-                                    </div>
-                                    <!-- Form Group (birthday)-->
-                                    <div class="form-group col-md-6">
-                                        <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                        <input class="form-control" id="inputBirthday" type="text" name="birthday"
-                                            placeholder="Enter your birthday" value="06/10/1988" />
-                                    </div>
-                                </div>
-                                <!-- Save changes button-->
-                                <button class="btn btn-primary" type="button">Save changes</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </main>
-
 @endsection
