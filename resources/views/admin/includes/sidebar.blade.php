@@ -69,7 +69,7 @@
                         <div class="collapse" id="pagesCollapseAccount" data-parent="#accordionSidenavPagesMenu">
                             <nav class="sidenav-menu-nested nav">
                                 <a class="nav-link" href="{{ route('admin.profile') }}">Profile</a>
-                                <a class="nav-link" href="#">Change Password</a>
+                                <a class="nav-link" href="{{ route('admin.profile-password') }}">Change Password</a>
                             </nav>
                         </div>
                         <!-- Nested Sidenav Accordion (Manage Account)-->

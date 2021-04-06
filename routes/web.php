@@ -28,6 +28,7 @@ Route::get('/complaints/create', 'GuestController@create')->name('guest.create')
 
 //admin
 Route::get('/admin/account-profile', 'AdminController@profile')->name('admin.profile');
+Route::get('/admin/account-password', 'AdminController@password')->name('admin.profile-password');
 Route::get('/admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 Route::get('/admin/complaints', 'AdminController@complaintsIndex')->name('admin.complaints');
 

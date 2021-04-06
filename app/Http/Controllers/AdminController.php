@@ -8,7 +8,12 @@ class AdminController extends Controller
 {
     public function profile()
     {
-        return view('admin.profile');
+        return view('admin.accounts.profile');
+    }
+
+    public function password()
+    {
+        return view('admin.accounts.password');
     }
 
     public function dashboard()

@@ -24,8 +24,8 @@
         <div class="container mt-4">
             <!-- Account page navigation-->
             <nav class="nav nav-borders">
-                <a class="nav-link active ml-0" href="account-profile.html">Profile</a>
-                <a class="nav-link" href="account-billing.html">Change Password</a>
+                <a class="nav-link active ml-0" href="{{ route('admin.profile') }}">Profile</a>
+                <a class="nav-link" href="{{ route('admin.profile-password') }}">Change Password</a>
             </nav>
             <hr class="mt-0 mb-4" />
             <div class="row">
@@ -53,8 +53,8 @@
                                 <!-- Form Group (username)-->
                                 <div class="form-group">
                                     <label class="small mb-1" for="inputUsername">Name</label>
-                                    <input class="form-control" id="inputUsername" type="text"
-                                        placeholder="" value="{{ Auth::user()->name }}" />
+                                    <input class="form-control" id="inputUsername" type="text" placeholder=""
+                                        value="{{ Auth::user()->name }}" />
                                 </div>
                                 <!-- Form Group (email address)-->
                                 <div class="form-group">
