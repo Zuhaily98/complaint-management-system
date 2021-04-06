@@ -31,6 +31,11 @@ class AdminController extends Controller
         return view('admin.accounts.create_officer');
     }
 
+    public function panelsIndex()
+    {
+        return view('admin.panels.index');
+    }
+
     public function dashboard()
     {
         return view('admin.dashboard');

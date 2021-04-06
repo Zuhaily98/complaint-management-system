@@ -33,6 +33,9 @@ Route::get('/admin/account/password', 'AdminController@password')->name('admin.p
 Route::get('/admin/account/add-admin', 'AdminController@createAdmin')->name('admin.create-admin');
 Route::get('/admin/account/add-officer', 'AdminController@createOfficer')->name('admin.create-officer');
 
+// panel
+Route::get('/admin/panel/index', 'AdminController@panelsIndex')->name('admin.panels');
+
 Route::get('/admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 Route::get('/admin/complaints', 'AdminController@complaintsIndex')->name('admin.complaints');
 
