@@ -16,9 +16,14 @@ class AdminController extends Controller
         return view('admin.accounts.password');
     }
 
-    public function addAdmin()
+    public function createAdmin()
     {
         return view('admin.accounts.create_admin');
+    }
+
+    public function createOfficer()
+    {
+        return view('admin.accounts.create_officer');
     }
 
     public function dashboard()

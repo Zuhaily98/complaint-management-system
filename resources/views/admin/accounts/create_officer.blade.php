@@ -1,7 +1,7 @@
 @extends('admin.main')
 
 @section('title')
-    Create Admin :: Complaint Management System
+    Create Officer :: Complaint Management System
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
                         <div class="col-auto mb-3">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="user"></i></div>
-                                Create Administrator Account
+                                Create Officer Account
                             </h1>
                         </div>
                     </div>
@@ -24,8 +24,8 @@
         <div class="container mt-4">
             <!-- Account page navigation-->
             <nav class="nav nav-borders">
-                <a class="nav-link active ml-0" href="{{ route('admin.create-admin') }}">Create Admin Account</a>
-                <a class="nav-link" href="{{ route('admin.create-officer') }}">Create Officer Account</a>
+                <a class="nav-link" href="{{ route('admin.create-admin') }}">Create Admin Account</a>
+                <a class="nav-link active ml-0" href="{{ route('admin.create-officer') }}">Create Officer Account</a>
                 <a class="nav-link" href="{{ route('admin.profile-password') }}">View All Account</a>
             </nav>
             <hr class="mt-0 mb-4" />
@@ -83,7 +83,7 @@
 
                                 </div>
                                 <!-- Save changes button-->
-                                <button class="btn btn-primary" type="button">Create New Admin</button>
+                                <button class="btn btn-primary" type="button">Create New Officer</button>
                             </form>
                         </div>
                     </div>
