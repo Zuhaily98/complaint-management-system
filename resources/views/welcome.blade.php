@@ -13,9 +13,9 @@
                     </div>
                     <div class="heading_main text_align_center">
                        <div class="one">
-                          <a href="{{ route('complaints.create') }}" class="btn btn-outline-success">Create a Complaint</a>
-                          <a href="{{ route('complaints.index') }}" class="btn btn-outline-info">Search your Complaint</a>
-                          <a href="{{ route('complaints.contact') }}" class="btn btn-outline-danger">Contact Us</a>
+                          <a href="{{ route('guest.create') }}" class="btn btn-outline-success">Create a Complaint</a>
+                          <a href="{{ route('guest.index') }}" class="btn btn-outline-info">Search your Complaint</a>
+                          <a href="{{ route('guest.contact') }}" class="btn btn-outline-danger">Contact Us</a>
                        </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                             registered with MedKAD</p>
                     </div>
                     <div class="one">
-                     <a href="{{route('complaints.create')}}" class="btn btn-outline-secondary">Create Complaint</a>
+                     <a href="{{route('guest.create')}}" class="btn btn-outline-secondary">Create Complaint</a>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                         <p>It is a long fact that a reader will be distracted by the readable content..</p>
                     </div>
                     <div class="one">
-                     <a href="{{ route('complaints.index') }}" class="btn btn-outline-secondary">Search Complaint</a>
+                     <a href="{{ route('guest.index') }}" class="btn btn-outline-secondary">Search Complaint</a>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                         <p>It is a long established fact that a reader will be distracted by the readable content..</p>
                     </div>
                     <div class="one">
-                     <a href="{{ route('complaints.contact') }}" class="btn btn-outline-secondary">Contact Us</a>
+                     <a href="{{ route('guest.contact') }}" class="btn btn-outline-secondary">Contact Us</a>
                     </div>
                 </div>
             </div>

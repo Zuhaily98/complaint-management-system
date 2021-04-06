@@ -19,8 +19,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('/complaints', 'ComplaintController');
-Route::get('/contact', 'ComplaintController@contact')->name('complaints.contact');
+//guest
+Route::get('/complaints', 'GuestController@index')->name('guest.index');
+Route::get('/complaints/contact', 'GuestController@contact')->name('guest.contact');
+Route::get('/complaints/create', 'GuestController@create')->name('guest.create');
+
 
 
 //admin

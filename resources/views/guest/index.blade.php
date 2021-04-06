@@ -10,7 +10,7 @@
                     </div>
                     <div class="heading_main text_align_center">
                         <h3>Search complaint with your unique complaint ID. The ID were sent to your email. Click <a
-                                class="stretched-link text-danger" href="{{ route('complaints.create') }}"> here </a> if
+                                class="stretched-link text-danger" href="{{ route('guest.create') }}"> here </a> if
                             you want to create a new complaint
                         </h3>
                     </div>
