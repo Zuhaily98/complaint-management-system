@@ -125,8 +125,8 @@
                         </a>
                         <div class="collapse" id="pagesCollapseAuth" data-parent="#accordionSidenavPagesMenu">
                             <nav class="sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('admin.create-admin') }}">Assign Person In Charge</a>
-                                <a class="nav-link" href="{{ route('admin.create-officer') }}">Add Person In Charge</a>
+                                <a class="nav-link" href="{{ route('admin.person-in-charges') }}">List of Person In Charge</a>
+                                <a class="nav-link" href="{{ route('admin.create-person-in-charge') }}">Add Person In Charge</a>
                             </nav>
                         </div>
                     </nav>

@@ -45,6 +45,16 @@ class AdminController extends Controller
     {
         return view('admin.panels.create');
     }
+    
+    public function personInChargesIndex()
+    {
+        return view('admin.panels.person_in_charges_index');
+    }
+
+    public function createPersonInCharge()
+    {
+        return view('admin.panels.create_person_in_charge');
+    }
 
 
     

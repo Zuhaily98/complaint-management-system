@@ -36,7 +36,8 @@ Route::get('/admin/account/create-officer', 'AdminController@createOfficer')->na
 // panel
 Route::get('/admin/panel/', 'AdminController@panelsIndex')->name('admin.panels');
 Route::get('/admin/panel/create-panel', 'AdminController@createPanel')->name('admin.create-panel');
-Route::get('/admin/panel/create-person-in-charge', 'AdminController@createPanel')->name('admin.create-panel');
+Route::get('/admin/panel/person-in-charges', 'AdminController@personInChargesIndex')->name('admin.person-in-charges');
+Route::get('/admin/panel/create-person-in-charge', 'AdminController@createPersonInCharge')->name('admin.create-person-in-charge');
 
 Route::get('/admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 Route::get('/admin/complaints', 'AdminController@complaintsIndex')->name('admin.complaints');
