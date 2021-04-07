@@ -97,7 +97,7 @@
                 <div class="collapse" id="collapseComponents" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ route('admin.panels') }}">List of Panel</a>
-                        <a class="nav-link" href="avatars.html">Add Panel</a>
+                        <a class="nav-link" href="{{ route('admin.create-panel') }}">Add Panel</a>
                         <a class="nav-link" href="badges.html">Add Person In Charge</a>
                     </nav>
                 </div>

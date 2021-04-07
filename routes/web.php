@@ -30,11 +30,12 @@ Route::get('/complaints/create', 'GuestController@create')->name('guest.create')
 Route::get('/admin/account/index', 'AdminController@usersIndex')->name('admin.users');
 Route::get('/admin/account/profile', 'AdminController@profile')->name('admin.profile');
 Route::get('/admin/account/password', 'AdminController@password')->name('admin.profile-password');
-Route::get('/admin/account/add-admin', 'AdminController@createAdmin')->name('admin.create-admin');
-Route::get('/admin/account/add-officer', 'AdminController@createOfficer')->name('admin.create-officer');
+Route::get('/admin/account/create-admin', 'AdminController@createAdmin')->name('admin.create-admin');
+Route::get('/admin/account/create-officer', 'AdminController@createOfficer')->name('admin.create-officer');
 
 // panel
 Route::get('/admin/panel/index', 'AdminController@panelsIndex')->name('admin.panels');
+Route::get('/admin/panel/create-panel', 'AdminController@createPanel')->name('admin.create-panel');
 
 Route::get('/admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 Route::get('/admin/complaints', 'AdminController@complaintsIndex')->name('admin.complaints');
