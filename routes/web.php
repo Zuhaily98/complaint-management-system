@@ -39,6 +39,12 @@ Route::get('/admin/panel/create-panel', 'AdminController@createPanel')->name('ad
 Route::get('/admin/panel/person-in-charges', 'AdminController@personInChargesIndex')->name('admin.person-in-charges');
 Route::get('/admin/panel/create-person-in-charge', 'AdminController@createPersonInCharge')->name('admin.create-person-in-charge');
 
+// place
+Route::get('/admin/place/create-state', 'AdminController@createState')->name('admin.create-state');
+Route::get('/admin/place/create-city', 'AdminController@createCity')->name('admin.create-city');
+Route::get('/admin/place/create-district', 'AdminController@createDistrict')->name('admin.create-district');
+
+
 Route::get('/admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 Route::get('/admin/complaints', 'AdminController@complaintsIndex')->name('admin.complaints');
 

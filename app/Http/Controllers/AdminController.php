@@ -51,6 +51,26 @@ class AdminController extends Controller
         return view('admin.panels.person_in_charges_index');
     }
 
+    // Place
+
+    public function createState()
+    {
+        return view('admin.places.state');
+    }
+
+    public function createCity()
+    {
+        return view('admin.places.city');
+    }
+
+    public function createDistrict()
+    {
+        return view('admin.places.district');
+    }
+
+
+
+
     public function createPersonInCharge()
     {
         return view('admin.panels.create_person_in_charge');
