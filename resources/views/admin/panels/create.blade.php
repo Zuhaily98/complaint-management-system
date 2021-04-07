@@ -78,6 +78,11 @@
                                 <option value="">Seksyen 13</option>
                             </select>
                         </div>
+                        <!-- Form Group (Location)-->
+                        <div class="form-group">
+                            <label class="small mb-1" for="">Location</label>
+                            <p>--</p>
+                        </div>
                         <!-- Save changes button-->
                         <button class="btn btn-primary" type="button">Save Panel</button>
                     </form>
