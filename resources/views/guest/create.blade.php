@@ -87,15 +87,15 @@
                 <div class="card-header bg-danger text-white">Complainer Information</div>
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="">Name</label>
+                        <label for="name">Name</label>
                         <input type="text" name="" id="" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="">Phone</label>
+                        <label for="phone">Phone</label>
                         <input type="text" name="" id="" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="">Email</label>
+                        <label for="email">Email</label>
                         <input type="text" name="" id="" class="form-control">
                     </div>
                 </div>

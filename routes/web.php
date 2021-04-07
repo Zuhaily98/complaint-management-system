@@ -19,34 +19,43 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//guest
+// Guest
 Route::get('/complaints', 'GuestController@index')->name('guest.index');
 Route::get('/complaints/contact', 'GuestController@contact')->name('guest.contact');
 Route::get('/complaints/create', 'GuestController@create')->name('guest.create');
 
 
 // Admin
-// account
+Route::get('/admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+Route::get('/admin/complaints', 'AdminController@complaintsIndex')->name('admin.complaints');
+
+// Admin - account
 Route::get('/admin/account/index', 'AdminController@usersIndex')->name('admin.users');
 Route::get('/admin/account/profile', 'AdminController@profile')->name('admin.profile');
 Route::get('/admin/account/password', 'AdminController@password')->name('admin.profile-password');
 Route::get('/admin/account/create-admin', 'AdminController@createAdmin')->name('admin.create-admin');
 Route::get('/admin/account/create-officer', 'AdminController@createOfficer')->name('admin.create-officer');
 
-// panel
+// Admin - panel
 Route::get('/admin/panel/', 'AdminController@panelsIndex')->name('admin.panels');
 Route::get('/admin/panel/create-panel', 'AdminController@createPanel')->name('admin.create-panel');
 Route::get('/admin/panel/person-in-charges', 'AdminController@personInChargesIndex')->name('admin.person-in-charges');
 Route::get('/admin/panel/create-person-in-charge', 'AdminController@createPersonInCharge')->name('admin.create-person-in-charge');
 
-// place
+// Admin - place
 Route::get('/admin/place/create-state', 'AdminController@createState')->name('admin.create-state');
 Route::get('/admin/place/create-city', 'AdminController@createCity')->name('admin.create-city');
 Route::get('/admin/place/create-district', 'AdminController@createDistrict')->name('admin.create-district');
 
 
-Route::get('/admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
-Route::get('/admin/complaints', 'AdminController@complaintsIndex')->name('admin.complaints');
+// Guest
+Route::get('/officer/dashboard', 'OfficerController@dashboard')->name('officer.dashboard');
+Route::get('/officer/complaints', 'OfficerController@complaintsIndex')->name('officer.complaints'); //belum buat
+
+// Guest - account
+
+
+
 
 
 
