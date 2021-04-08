@@ -8,4 +8,29 @@ use Illuminate\Database\Eloquent\Model;
 class Panel extends Model
 {
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'type',
+        'name',
+        'address',
+        'postcode',
+    ];
+
+    // 1 panel has many complaints
+    public function complaints()
+    {
+        return $this->hasMany(Complaint::class);
+    }
+
+    // 1 panel has many PICs
+    public function personInCharges()
+    {
+        return $this->hasMany(PersonInCharge::class);
+    }
+
 }
