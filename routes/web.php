@@ -30,7 +30,7 @@ Route::get('/admin/dashboard', 'AdminController@dashboard')->name('admin.dashboa
 Route::get('/admin/complaints', 'AdminController@complaintsIndex')->name('admin.complaints');
 
 // Admin - account
-Route::get('/admin/account/index', 'AdminController@usersIndex')->name('admin.users');
+Route::get('/admin/accounts', 'AdminController@usersIndex')->name('admin.users');
 Route::get('/admin/account/profile', 'AdminController@profile')->name('admin.profile');
 Route::get('/admin/account/password', 'AdminController@password')->name('admin.profile-password');
 Route::get('/admin/account/create-admin', 'AdminController@createAdmin')->name('admin.create-admin');
@@ -48,12 +48,13 @@ Route::get('/admin/place/create-city', 'AdminController@createCity')->name('admi
 Route::get('/admin/place/create-district', 'AdminController@createDistrict')->name('admin.create-district');
 
 
-// Guest
+// Officer
 Route::get('/officer/dashboard', 'OfficerController@dashboard')->name('officer.dashboard');
-Route::get('/officer/complaints', 'OfficerController@complaintsIndex')->name('officer.complaints'); //belum buat
+Route::get('/officer/complaints', 'OfficerController@complaintsIndex')->name('officer.complaints'); 
 
-// Guest - account
-
+// Officer - account
+Route::get('/officer/account/profile', 'OfficerController@profile')->name('officer.profile');
+Route::get('/officer/account/password', 'OfficerController@password')->name('officer.profile-password');
 
 
 

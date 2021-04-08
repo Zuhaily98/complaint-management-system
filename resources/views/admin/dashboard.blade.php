@@ -13,7 +13,7 @@
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="activity"></i></div>
-                                Dashboard
+                                Administrator Dashboard
                             </h1>
                             <div class="page-header-subtitle">Example dashboard overview and content summary</div>
                         </div>

@@ -13,6 +13,7 @@
         <link rel="icon" type="image/x-icon" href="https://res-4.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco/o0yvvdlumh0rghybj9kx" />
         <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+        @yield('css')
     </head>
     <body class="nav-fixed">
         @include('officer.includes.navbar')
@@ -35,5 +36,6 @@
         <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" crossorigin="anonymous"></script>
         <script src="{{ asset('admin/assets/demo/date-range-picker-demo.js') }}"></script>
+        @yield('js')
     </body>
 </html>

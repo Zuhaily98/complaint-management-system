@@ -30,7 +30,7 @@
                 </a>
                 <div class="collapse" id="collapseDashboards" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                        <a class="nav-link" href="{{ route('admin.dashboard') }}">
+                        <a class="nav-link" href="{{ route('officer.dashboard') }}">
                             Default
                             <span class="badge badge-primary-soft text-primary ml-auto">Updated</span>
                         </a>
@@ -49,8 +49,7 @@
                 </a>
                 <div class="collapse" id="collapseFlows" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ route('admin.complaints') }}">List of Complaint</a>
-                        <a class="nav-link" href="#">Search Complaint</a>
+                        <a class="nav-link" href="{{ route('officer.complaints') }}">List of Complaint</a>
                     </nav>
                 </div>
                 <!-- Sidenav Heading (Account management)-->
@@ -63,87 +62,11 @@
                     <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
                 <div class="collapse" id="collapsePages" data-parent="#accordionSidenav">
-                    <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
-                        <!-- Nested Sidenav Accordion (Profile)-->
-                        <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse"
-                            data-target="#pagesCollapseAccount" aria-expanded="false"
-                            aria-controls="pagesCollapseAccount">
-                            Profile
-                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="pagesCollapseAccount" data-parent="#accordionSidenavPagesMenu">
-                            <nav class="sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('admin.profile') }}">Profile</a>
-                                <a class="nav-link" href="{{ route('admin.profile-password') }}">Change Password</a>
-                            </nav>
-                        </div>
-                        <!-- Nested Sidenav Accordion (Manage Account)-->
-                        <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse"
-                            data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                            Manage Another Account
-                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="pagesCollapseAuth" data-parent="#accordionSidenavPagesMenu">
-                            <nav class="sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('admin.create-admin') }}">Create Admin Account</a>
-                                <a class="nav-link" href="{{ route('admin.create-officer') }}">Create Officer
-                                    Account</a>
-                                <a class="nav-link" href="{{ route('admin.users') }}">View All Account</a>
-                            </nav>
-                        </div>
-                    </nav>
-                </div>
-                <!-- Sidenav Heading (Panel and Places)-->
-                <div class="sidenav-menu-heading">Panel and Places</div>
-                <!-- Sidenav Accordion (Panel)-->
-                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse"
-                    data-target="#collapseComponents" aria-expanded="false" aria-controls="collapseComponents">
-                    <div class="nav-link-icon"><i data-feather="package"></i></div>
-                    Panel
-                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                </a>
-                <div class="collapse" id="collapseComponents" data-parent="#accordionSidenav">
-                    <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
-                        <!-- Nested Sidenav Accordion (Profile)-->
-                        <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse"
-                            data-target="#pagesCollapseAccount" aria-expanded="false"
-                            aria-controls="pagesCollapseAccount">
-                            Panel
-                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="pagesCollapseAccount" data-parent="#accordionSidenavPagesMenu">
-                            <nav class="sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('admin.panels') }}">List of Panel</a>
-                                <a class="nav-link" href="{{ route('admin.create-panel') }}">Add Panel</a>
-                            </nav>
-                        </div>
-                        <!-- Nested Sidenav Accordion (Manage Account)-->
-                        <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse"
-                            data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                            Person In Charge
-                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="pagesCollapseAuth" data-parent="#accordionSidenavPagesMenu">
-                            <nav class="sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('admin.person-in-charges') }}">List of Person In Charge</a>
-                                <a class="nav-link" href="{{ route('admin.create-person-in-charge') }}">Add Person In Charge</a>
-                            </nav>
-                        </div>
-                    </nav>
-                </div>
-                <!-- Sidenav Accordion (Places)-->
-                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse"
-                    data-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
-                    <div class="nav-link-icon"><i data-feather="tool"></i></div>
-                    Place
-                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                </a>
-                <div class="collapse" id="collapseUtilities" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav">
-                        <a class="nav-link" href="animations.html">List of Places</a>
-                        <a class="nav-link" href="{{ route('admin.create-state') }}">Add State</a>
-                        <a class="nav-link" href="{{ route('admin.create-city') }}">Add City</a>
-                        <a class="nav-link" href="{{ route('admin.create-district') }}">Add District</a>
+                        <a class="nav-link" href="{{ route('officer.profile') }}">Profile</a>
+                        <a class="nav-link" href="{{ route('officer.profile-password') }}">Change Password</a>
+                    </nav>
+                    <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
                     </nav>
                 </div>
             </div>
