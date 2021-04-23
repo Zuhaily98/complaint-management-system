@@ -17,10 +17,10 @@ class CreateCommentsTable extends Migration
             $table->id();
             
             $table->unsignedBigInteger('complaint_id');
-            // $table->foreign('complaint_id')->references('id')->on('complaints');
+            $table->foreign('complaint_id')->references('id')->on('complaints');
 
             $table->unsignedBigInteger('user_id');
-            // $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
             
             $table->integer('parent_id')->unsigned()->nullable();
             $table->integer('commentable_id')->unsigned();

@@ -17,7 +17,11 @@ class CreatePanelsTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('district_id');
-            // $table->foreign('district_id')->references('id')->on('districts');
+            $table->foreign('district_id')->references('id')->on('districts');
+
+            // contoh:
+            // $table->unsignedBigInteger('user_id');
+            // $table->foreign('user_id')->references('id')->on('users');
 
             $table->integer('type');
             $table->string('name');

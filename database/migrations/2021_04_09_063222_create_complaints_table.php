@@ -17,16 +17,16 @@ class CreateComplaintsTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('user_id');
-            // $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->unsignedBigInteger('guest_id');
-            // $table->foreign('guest_id')->references('id')->on('guests');
+            $table->foreign('guest_id')->references('id')->on('guests');
 
             $table->unsignedBigInteger('category_id');
-            // $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories');
 
             $table->unsignedBigInteger('panel_id');    
-            // $table->foreign('panel_id')->references('id')->on('panels');
+            $table->foreign('panel_id')->references('id')->on('panels');
 
             $table->text('detail');
             $table->integer('priority');

@@ -17,7 +17,7 @@ class CreateAttachmentsTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('complaint_id');
-            // $table->foreign('complaint_id')->references('id')->on('complaints');
+            $table->foreign('complaint_id')->references('id')->on('complaints');
 
             $table->string('attachment');
             $table->timestamps();

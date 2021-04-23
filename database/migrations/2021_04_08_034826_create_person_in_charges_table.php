@@ -17,7 +17,7 @@ class CreatePersonInChargesTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('panel_id');
-            // $table->foreign('panel_id')->references('id')->on('panels');
+            $table->foreign('panel_id')->references('id')->on('panels');
 
             $table->string('name');
             $table->string('email')->unique();
