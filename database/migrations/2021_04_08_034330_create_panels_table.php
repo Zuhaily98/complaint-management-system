@@ -15,13 +15,16 @@ class CreatePanelsTable extends Migration
     {
         Schema::create('panels', function (Blueprint $table) {
             $table->id();
-            // $table->integer('disctrict_id');
+
+            $table->unsignedBigInteger('district_id');
+            // $table->foreign('district_id')->references('id')->on('districts');
+
             $table->integer('type');
             $table->string('name');
             $table->text('address');
             $table->string('postcode');
-            // $table->integer('latitude');
-            // $table->integer('longitude');
+            $table->integer('latitude');
+            $table->integer('longitude');
             $table->timestamps();
         });
     }

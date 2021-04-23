@@ -43,4 +43,17 @@ class Complaint extends Model
         return $this->belongsTo(Category::class);
     }
 
+    // a complaint can have many comments
+    // morph
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id');
+    }
+
+    // a complaint can have many attachments
+    public function attachments()
+    {
+        return $this->hasMany(Attachment::class);
+    }
+
 }

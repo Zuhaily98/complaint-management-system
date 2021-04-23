@@ -33,4 +33,10 @@ class Panel extends Model
         return $this->hasMany(PersonInCharge::class);
     }
 
+    // a panel belongs to a district
+    public function districts()
+    {
+        return $this->belongsTo(District::class);
+    }
+
 }

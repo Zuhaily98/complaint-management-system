@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePersonInChargesTable extends Migration
+class CreateDistrictsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreatePersonInChargesTable extends Migration
      */
     public function up()
     {
-        Schema::create('person_in_charges', function (Blueprint $table) {
+        Schema::create('districts', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('panel_id');
-            // $table->foreign('panel_id')->references('id')->on('panels');
+            $table->unsignedBigInteger('city_id');
+            // $table->foreign('city_id')->references('id')->on('cities');
 
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('phone');
+            $table->string('district');
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ class CreatePersonInChargesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('person_in_charges');
+        Schema::dropIfExists('districts');
     }
 }

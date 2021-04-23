@@ -46,4 +46,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Complaint::class);
     }
+
+    // 1 user can create many comments
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

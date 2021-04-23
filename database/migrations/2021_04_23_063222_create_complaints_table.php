@@ -15,12 +15,21 @@ class CreateComplaintsTable extends Migration
     {
         Schema::create('complaints', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('guest_id');
-            $table->integer('category_id');
-            $table->integer('panel_id');
+
+            $table->unsignedBigInteger('user_id');
+            // $table->foreign('user_id')->references('id')->on('users');
+
+            $table->unsignedBigInteger('guest_id');
+            // $table->foreign('guest_id')->references('id')->on('guests');
+
+            $table->unsignedBigInteger('category_id');
+            // $table->foreign('category_id')->references('id')->on('categories');
+
+            $table->unsignedBigInteger('panel_id');    
+            // $table->foreign('panel_id')->references('id')->on('panels');
+
             $table->text('detail');
-            // $table->integer('priority');
+            $table->integer('priority');
             $table->integer('status');
             $table->timestamps();
         });
