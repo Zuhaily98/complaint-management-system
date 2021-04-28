@@ -6,7 +6,7 @@
             <div class="col-lg-5">
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <div class="card-header justify-content-center">
-                        <h3 class="font-weight-light my-4">Administrator Login</h3>
+                        <h3 class="font-weight-light my-4">Staff Login</h3>
                     </div>
 
                     <div class="card-body">

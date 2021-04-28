@@ -150,7 +150,7 @@
 
                 <div class="col-lg-3 col-md-6 col-sm-6 white_fonts">
                    <div class="full footer_blog_last">
-                       <p>Admin Login</p>
+                       <p>Staff Login</p>
                        <p>
                          <a href="/login" class="btn btn-primary btn-sm">Login</a>
                        </p>

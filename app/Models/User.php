@@ -41,6 +41,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function isAdmin()
+    {
+        return $this->role == 'admin';
+    }
+
+    public function isOfficer()
+    {
+        return $this->role == 'officer';
+    }
+
     // 1 user can has many complaints
     public function complaints()
     {
