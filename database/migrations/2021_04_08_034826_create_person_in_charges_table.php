@@ -20,7 +20,7 @@ class CreatePersonInChargesTable extends Migration
             $table->foreign('panel_id')->references('id')->on('panels');
 
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('phone');
             $table->timestamps();
         });
