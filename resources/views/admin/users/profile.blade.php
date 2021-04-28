@@ -24,8 +24,8 @@
         <div class="container mt-4">
             <!-- Account page navigation-->
             <nav class="nav nav-borders">
-                <a class="nav-link active ml-0" href="{{ route('admin.profile') }}">Profile</a>
-                <a class="nav-link" href="{{ route('admin.profile-password') }}">Change Password</a>
+                <a class="nav-link active ml-0" href="{{ route('admin.users.profile') }}">Profile</a>
+                <a class="nav-link" href="{{ route('admin.users.password') }}">Change Password</a>
             </nav>
             <hr class="mt-0 mb-4" />
             <div class="row">

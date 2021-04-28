@@ -1,7 +1,7 @@
 @extends('admin.main')
 
 @section('title')
-    Create Officer :: Complaint Management System
+    Create Admin :: Complaint Management System
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
                         <div class="col-auto mb-3">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="user"></i></div>
-                                Create Officer Account
+                                Create Staff Account
                             </h1>
                         </div>
                     </div>
@@ -24,9 +24,8 @@
         <div class="container mt-4">
             <!-- Account page navigation-->
             <nav class="nav nav-borders">
-                <a class="nav-link" href="{{ route('admin.create-admin') }}">Create Admin Account</a>
-                <a class="nav-link active ml-0" href="{{ route('admin.create-officer') }}">Create Officer Account</a>
-                <a class="nav-link" href="{{ route('admin.users') }}">View All Account</a>
+                <a class="nav-link active ml-0" href="{{ route('admin.users.create') }}">Create Staff Account</a>
+                <a class="nav-link" href="{{ route('admin.users.index') }}">View All Account</a>
             </nav>
             <hr class="mt-0 mb-4" />
             <div class="row">
@@ -41,6 +40,15 @@
                                     <label class="small mb-1" for="inputUsername">Name</label>
                                     <input class="form-control" id="inputUsername" type="text" placeholder="Enter Name"
                                         value="" />
+                                </div>
+                                <!-- Form Group (role) -->
+                                <div class="form-group">
+                                    <label class="small mb-1" for="role">Role</label>
+                                    <select name="role" id="role" class="form-control">
+                                        <option value="">-- Select Role --</option>
+                                        <option value="">Administrator</option>
+                                        <option value="">Officer</option>
+                                    </select>
                                 </div>
                                 <!-- Form Group (email address)-->
                                 <div class="form-group">
@@ -83,7 +91,7 @@
 
                                 </div>
                                 <!-- Save changes button-->
-                                <button class="btn btn-primary" type="button">Create New Officer</button>
+                                <button class="btn btn-primary" type="button">Create New Admin</button>
                             </form>
                         </div>
                     </div>

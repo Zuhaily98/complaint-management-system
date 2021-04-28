@@ -15,7 +15,7 @@
                        <div class="one">
                           <a href="{{ route('guest.create') }}" class="btn btn-outline-success">Create a Complaint</a>
                           <a href="{{ route('guest.index') }}" class="btn btn-outline-info">Search your Complaint</a>
-                          <a href="{{ route('guest.contact') }}" class="btn btn-outline-danger">Contact Us</a>
+                          <a href="/contact" class="btn btn-outline-danger">Contact Us</a>
                        </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                         <p>It is a long established fact that a reader will be distracted by the readable content..</p>
                     </div>
                     <div class="one">
-                     <a href="{{ route('guest.contact') }}" class="btn btn-outline-secondary">Contact Us</a>
+                     <a href="/contact" class="btn btn-outline-secondary">Contact Us</a>
                     </div>
                 </div>
             </div>

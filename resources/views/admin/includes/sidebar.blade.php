@@ -54,7 +54,7 @@
                     </nav>
                 </div>
                 <!-- Sidenav Heading (Account management)-->
-                <div class="sidenav-menu-heading">Account Management</div>
+                <div class="sidenav-menu-heading">User Management</div>
                 <!-- Sidenav Accordion (Pages)-->
                 <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse"
                     data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -73,22 +73,20 @@
                         </a>
                         <div class="collapse" id="pagesCollapseAccount" data-parent="#accordionSidenavPagesMenu">
                             <nav class="sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('admin.profile') }}">Profile</a>
-                                <a class="nav-link" href="{{ route('admin.profile-password') }}">Change Password</a>
+                                <a class="nav-link" href="{{ route('admin.users.profile') }}">Profile</a>
+                                <a class="nav-link" href="{{ route('admin.users.password') }}">Change Password</a>
                             </nav>
                         </div>
                         <!-- Nested Sidenav Accordion (Manage Account)-->
                         <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse"
                             data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                            Manage Another Account
+                            Manage Another User
                             <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="pagesCollapseAuth" data-parent="#accordionSidenavPagesMenu">
                             <nav class="sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('admin.create-admin') }}">Create Admin Account</a>
-                                <a class="nav-link" href="{{ route('admin.create-officer') }}">Create Officer
-                                    Account</a>
-                                <a class="nav-link" href="{{ route('admin.users') }}">View All Account</a>
+                                <a class="nav-link" href="{{ route('admin.users.create') }}">Create Staff Account</a>
+                                <a class="nav-link" href="{{ route('admin.users.index') }}">View All Users</a>
                             </nav>
                         </div>
                     </nav>
@@ -113,8 +111,8 @@
                         </a>
                         <div class="collapse" id="pagesCollapseAccount" data-parent="#accordionSidenavPagesMenu">
                             <nav class="sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('admin.panels') }}">List of Panel</a>
-                                <a class="nav-link" href="{{ route('admin.create-panel') }}">Add Panel</a>
+                                <a class="nav-link" href="{{ route('admin.panels.index') }}">List of Panel</a>
+                                <a class="nav-link" href="{{ route('admin.panels.create') }}">Add Panel</a>
                             </nav>
                         </div>
                         <!-- Nested Sidenav Accordion (Manage Account)-->
@@ -125,8 +123,8 @@
                         </a>
                         <div class="collapse" id="pagesCollapseAuth" data-parent="#accordionSidenavPagesMenu">
                             <nav class="sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('admin.person-in-charges') }}">List of Person In Charge</a>
-                                <a class="nav-link" href="{{ route('admin.create-person-in-charge') }}">Add Person In Charge</a>
+                                <a class="nav-link" href="{{ route('admin.person_in_charges.index') }}">List of Person In Charge</a>
+                                <a class="nav-link" href="{{ route('admin.person_in_charges.create') }}">Add Person In Charge</a>
                             </nav>
                         </div>
                     </nav>
@@ -141,9 +139,9 @@
                 <div class="collapse" id="collapseUtilities" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav">
                         <a class="nav-link" href="animations.html">List of Places</a>
-                        <a class="nav-link" href="{{ route('admin.create-state') }}">Add State</a>
-                        <a class="nav-link" href="{{ route('admin.create-city') }}">Add City</a>
-                        <a class="nav-link" href="{{ route('admin.create-district') }}">Add District</a>
+                        <a class="nav-link" href="{{ route('admin.states.create') }}">Add State</a>
+                        <a class="nav-link" href="{{ route('admin.cities.create') }}">Add City</a>
+                        <a class="nav-link" href="{{ route('admin.districts.create') }}">Add District</a>
                     </nav>
                 </div>
             </div>

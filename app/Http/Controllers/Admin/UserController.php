@@ -9,26 +9,21 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('admin.accounts.index');
+        return view('admin.users.index');
     }
 
     public function profile()
     {
-        return view('admin.accounts.profile');
+        return view('admin.users.profile');
     }
 
     public function password()
     {
-        return view('admin.accounts.password');
+        return view('admin.users.password');
     }
 
     public function create()
     {
-        return view('admin.accounts.create_admin');
-    }
-
-    public function createOfficer()
-    {
-        return view('admin.accounts.create_officer');
+        return view('admin.users.create');
     }
 }

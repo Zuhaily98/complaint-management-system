@@ -11,9 +11,8 @@
         
         
             <nav class="nav nav-borders">
-                <a class="nav-link" href="{{ route('admin.create-admin') }}">Create Admin Account</a>
-                <a class="nav-link" href="{{ route('admin.create-officer') }}">Create Officer Account</a>
-                <a class="nav-link active ml-0" href="{{ route('admin.users') }}">View All Account</a>
+                <a class="nav-link" href="{{ route('admin.users.create') }}">Create Staff Account</a>
+                <a class="nav-link active ml-0" href="{{ route('admin.users.index') }}">View All Account</a>
             </nav>
             <hr class="mt-0 mb-4" />
 

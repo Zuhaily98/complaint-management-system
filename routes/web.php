@@ -22,7 +22,9 @@ Auth::routes();
 // Guest
 Route::get('/complaints', 'Guest\ComplaintController@index')->name('guest.index');
 Route::get('/complaints/create', 'Guest\ComplaintController@create')->name('guest.create');
-Route::get('/contact', 'GuestController@contact')->name('guest.contact');
+Route::get('/contact', function () {
+    return view('guest.contact');
+});
 
 
 Route::middleware(['auth', 'can:admin-views'])->group(function(){
@@ -31,22 +33,23 @@ Route::middleware(['auth', 'can:admin-views'])->group(function(){
     Route::get('/admin/complaints', 'Admin\ComplaintController@index')->name('admin.complaints');
 
     // Admin - account
-    Route::get('/admin/accounts', 'Admin\UserController@index')->name('admin.users');
-    Route::get('/admin/account/profile', 'Admin\UserController@profile')->name('admin.profile');
-    Route::get('/admin/account/password', 'Admin\UserController@password')->name('admin.profile-password');
-    Route::get('/admin/account/create-admin', 'Admin\UserController@create')->name('admin.create-admin');
-    Route::get('/admin/account/create-officer', 'Admin\UserController@createOfficer')->name('admin.create-officer');
+    Route::get('/admin/users', 'Admin\UserController@index')->name('admin.users.index');
+    Route::get('/admin/users/profile', 'Admin\UserController@profile')->name('admin.users.profile');
+    Route::get('/admin/users/password', 'Admin\UserController@password')->name('admin.users.password');
+    Route::get('/admin/users/create', 'Admin\UserController@create')->name('admin.users.create');
 
     // Admin - panel
-    Route::get('/admin/panel/', 'Admin\PanelController@index')->name('admin.panels');
-    Route::get('/admin/panel/create-panel', 'Admin\PanelController@create')->name('admin.create-panel');
-    Route::get('/admin/panel/person-in-charges', 'Admin\PersonInChargeController@index')->name('admin.person-in-charges');
-    Route::get('/admin/panel/create-person-in-charge', 'Admin\PersonInChargeController@create')->name('admin.create-person-in-charge');
+    Route::get('/admin/panels/', 'Admin\PanelController@index')->name('admin.panels.index');
+    Route::get('/admin/panels/create', 'Admin\PanelController@create')->name('admin.panels.create');
+
+    // Admin - Person In Charge
+    Route::get('/admin/person-in-charges/', 'Admin\PersonInChargeController@index')->name('admin.person_in_charges.index');
+    Route::get('/admin/person-in-charges/create', 'Admin\PersonInChargeController@create')->name('admin.person_in_charges.create');
 
     // Admin - place
-    Route::get('/admin/place/create-state', 'Admin\StateController@create')->name('admin.create-state');
-    Route::get('/admin/place/create-city', 'Admin\CityController@create')->name('admin.create-city');
-    Route::get('/admin/place/create-district', 'Admin\DistrictController@create')->name('admin.create-district');
+    Route::get('/admin/states/create', 'Admin\StateController@create')->name('admin.states.create');
+    Route::get('/admin/cities/create', 'Admin\CityController@create')->name('admin.cities.create');
+    Route::get('/admin/districts/create', 'Admin\DistrictController@create')->name('admin.districts.create');
 });
 
 

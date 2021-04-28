@@ -9,11 +9,11 @@ class PersonInChargeController extends Controller
 {
     public function index()
     {
-        return view('admin.panels.person_in_charges_index');
+        return view('admin.person_in_charges.index');
     }
 
     public function create()
     {
-        return view('admin.panels.create_person_in_charge');
+        return view('admin.person_in_charges.create');
     }
 }

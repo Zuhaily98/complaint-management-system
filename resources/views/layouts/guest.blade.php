@@ -89,7 +89,7 @@
           <ul>
              <li><a href="/">Home</a></li>
              <li><a href="{{ route('guest.index') }}">Complaint</a></li>
-             <li><a href="{{ route('guest.contact') }}">Contact us</a></li>
+             <li><a href="/contact">Contact us</a></li>
           </ul>
        </div>
     </nav>
