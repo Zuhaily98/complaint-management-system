@@ -39,17 +39,20 @@
                     </nav>
                 </div>
                 <!-- Sidenav Heading (UI Toolkit)-->
-                <div class="sidenav-menu-heading">Complaint Management</div>
+                <div class="sidenav-menu-heading">Complaints</div>
                 <!-- Sidenav Accordion (Panel)-->
                 <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse"
                     data-target="#collapseFlows" aria-expanded="false" aria-controls="collapseFlows">
                     <div class="nav-link-icon"><i data-feather="repeat"></i></div>
-                    Complaint
+                    Complaint List
                     <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
                 <div class="collapse" id="collapseFlows" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ route('officer.complaints') }}">List of Complaint</a>
+                        <a class="nav-link" href="{{ route('officer.complaints.index') }}">Assigned Complaints</a>
+                    </nav>
+                    <nav class="sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ route('officer.complaints.pick') }}">Unassigned Complaints</a>
                     </nav>
                 </div>
                 <!-- Sidenav Heading (Account management)-->
@@ -63,8 +66,8 @@
                 </a>
                 <div class="collapse" id="collapsePages" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ route('officer.profile') }}">Profile</a>
-                        <a class="nav-link" href="{{ route('officer.profile-password') }}">Change Password</a>
+                        <a class="nav-link" href="{{ route('officer.users.profile') }}">Profile</a>
+                        <a class="nav-link" href="{{ route('officer.users.password') }}">Change Password</a>
                     </nav>
                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
                     </nav>

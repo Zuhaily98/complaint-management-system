@@ -1,12 +1,12 @@
 @extends('officer.main')
 
 @section('title')
-    Assigned Complaints :: Complaint Management System
+    Unassigned Complaints :: Complaint Management System
 @endsection
 
 @section('content')
     <div class="card mb-4">
-        <div class="card-header">Assigned Complaint List</div>
+        <div class="card-header">Unassigned Complaint List</div>
         <div class="card-body">
             <div class="datatable">
                 <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">

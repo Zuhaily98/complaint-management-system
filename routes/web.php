@@ -56,12 +56,12 @@ Route::middleware(['auth', 'can:admin-views'])->group(function(){
 Route::middleware(['auth', 'can:officer-views'])->group(function(){
     // Officer
     Route::get('/officer/dashboard', 'Officer\DashboardController@index')->name('officer.dashboard');
-    Route::get('/officer/complaints', 'Officer\ComplaintController@index')->name('officer.complaints'); 
+    Route::get('/officer/complaints', 'Officer\ComplaintController@index')->name('officer.complaints.index'); 
     Route::get('/officer/complaints/pick', 'Officer\ComplaintController@pick')->name('officer.complaints.pick');
 
     // Officer - account
-    Route::get('/officer/account/profile', 'Officer\UserController@profile')->name('officer.profile');
-    Route::get('/officer/account/password', 'Officer\UserController@password')->name('officer.profile-password');
+    Route::get('/officer/account/profile', 'Officer\UserController@profile')->name('officer.users.profile');
+    Route::get('/officer/account/password', 'Officer\UserController@password')->name('officer.users.password');
 });
 
 
