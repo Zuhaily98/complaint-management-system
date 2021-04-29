@@ -23,7 +23,7 @@ class CreatePanelsTable extends Migration
             // $table->unsignedBigInteger('user_id');
             // $table->foreign('user_id')->references('id')->on('users');
 
-            $table->integer('type');
+            $table->enum('type', ['Clinic', 'Hospital']);
             $table->string('name');
             $table->text('address');
             $table->string('postcode');

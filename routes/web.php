@@ -22,6 +22,7 @@ Auth::routes();
 // Guest
 Route::get('/complaints', 'Guest\ComplaintController@index')->name('guest.index');
 Route::get('/complaints/create', 'Guest\ComplaintController@create')->name('guest.create');
+Route::post('/complaints/create', 'Guest\ComplaintController@store')->name('guest.complaints.store');
 Route::get('/contact', function () {
     return view('guest.contact');
 });
