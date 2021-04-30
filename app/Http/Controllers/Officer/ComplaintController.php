@@ -11,12 +11,12 @@ class ComplaintController extends Controller
 {
     public function index()
     {
-        return view('officer.complaints.index')->with('complaints', Complaint::all());;
+        return view('officer.complaints.index')->with('complaints', Complaint::all());
     }
 
     public function pick()
     {
-        return view('officer.complaints.pick');
+        return view('officer.complaints.pick')->with('complaints', Complaint::whereNull('user_id')->get());
     }
 
     public function show(Complaint $complaint)
