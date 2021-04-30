@@ -18,7 +18,8 @@ class Complaint extends Model
         'detail',
         'status',
         'category_id',
-        'panel_id'
+        'panel_id',
+        'user_id'
     ];
 
     // each and every complaint belongs to a user

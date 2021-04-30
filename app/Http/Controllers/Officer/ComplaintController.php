@@ -19,6 +19,14 @@ class ComplaintController extends Controller
         return view('officer.complaints.pick')->with('complaints', Complaint::whereNull('user_id')->get());
     }
 
+    public function select(Request $request, Complaint $complaint)
+    {
+        
+        $complaint->update(['user_id' => auth()->user()->id]);
+        // dd($complaint);
+        return redirect(route('officer.complaints.pick'));
+    }
+
     public function show(Complaint $complaint)
     {
         return view('officer.complaints.show')->with('complaint', $complaint);

@@ -33,17 +33,24 @@
                         </tr>
                     </tfoot>
                     <tbody>
+                        
                         @foreach ($complaints as $complaint)
                          
-                            <tr>
-                                <td>{{ $complaint->id }}</td>
-                                <td>{{ $complaint->panel->name }}</td>
-                                <td>{{ $complaint->category->title }}</td>
-                                <td><div class="badge badge-primary badge-pill">{{ $complaint->priority }}</div></td>
-                                <td><div class="badge badge-warning badge-pill">{{ $complaint->status }}</div></td>
-                                <td>{{ $complaint->created_at->diffForHumans() }}</td>
-                                <td><a href="{{ route('officer.complaints.show', $complaint->id) }}" class="badge badge-info">See More</a></td>
-                            </tr>
+                            
+                                <tr>
+                                    <td>{{ $complaint->id }}</td>
+                                    <td>{{ $complaint->panel->name }}</td>
+                                    <td>{{ $complaint->category->title }}</td>
+                                    <td><div class="badge badge-primary badge-pill">{{ $complaint->priority }}</div></td>
+                                    <td><div class="badge badge-warning badge-pill">{{ $complaint->status }}</div></td>
+                                    <td>{{ $complaint->created_at->diffForHumans() }}</td>
+
+                                    <form action="{{ route('officer.complaints.select', $complaint) }}" method="post">
+                                        @csrf
+                                        <td><button type="submit" class="btn btn-primary btn-sm">Pick!</button></td>
+                                    </form>
+                                </tr>
+                          
                             
                         @endforeach
                 </table>

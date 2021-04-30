@@ -66,6 +66,7 @@ Route::middleware(['auth', 'can:officer-views'])->group(function(){
     // Officer - complaint
     Route::get('/officer/complaints', 'Officer\ComplaintController@index')->name('officer.complaints.index'); 
     Route::get('/officer/complaints/pick', 'Officer\ComplaintController@pick')->name('officer.complaints.pick');
+    Route::post('/officer/complaints/{complaint}/select', 'Officer\ComplaintController@select')->name('officer.complaints.select');
     Route::get('/officer/complaints/{complaint}', 'Officer\ComplaintController@show')->name('officer.complaints.show');
     Route::get('/officer/complaints/{complaint}/edit', 'Officer\ComplaintController@edit')->name('officer.complaints.edit');
     Route::post('/officer/complaints/{complaint}/update', 'Officer\ComplaintController@update')->name('officer.complaints.update');
