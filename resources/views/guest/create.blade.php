@@ -24,15 +24,15 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" name="" id="" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="text" name="" id="" class="form-control">
+                            <input type="text" name="name" id="name" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" name="" id="" class="form-control">
+                            <input type="text" name="email" id="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="text" name="phone" id="phone" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -46,8 +46,6 @@
                                 <option value="">--Select Type--</option>
                                 @foreach ($panels as $panel)
                                 <option value="{{ $panel->id }}">{{ $panel->type }}</option>
-                                {{-- <option value="">Clinic</option>
-                                <option value="">Hospital</option> --}} 
                                 @endforeach
                             </select>
                            
@@ -58,8 +56,6 @@
                                 <option value="">--Select State--</option>
                                 @foreach ($states as $state)
                                 <option value="{{ $state->id }}">{{ $state->state }}</option>
-                                {{-- <option value="">Selangor</option>
-                                <option value="">---</option> --}}
                                 @endforeach
                             </select>
                         </div>
@@ -69,8 +65,6 @@
                                 <option value="">--Select City--</option>
                                 @foreach ($cities as $city)
                                 <option value="{{ $city->id }}">{{ $city->city }}</option>
-                                {{-- <option value="">Shah Alam</option>
-                                <option value="">Puchong</option> --}}
                                 @endforeach
                             </select>
                         </div>
@@ -80,8 +74,6 @@
                                 <option value="">--Select Disctrict--</option>
                                 @foreach ($districts as $district)
                                 <option value="{{ $district->id }}">{{ $district->district }}</option>
-                                {{-- <option value="">Seksyen 13</option>
-                                <option value="">Seksyen 7</option> --}}
                                 @endforeach
                             </select>
                         </div>
@@ -91,7 +83,6 @@
                                 <option value="">--Select Panel--</option>
                                 @foreach ($panels as $panel)
                                 <option value="{{ $panel->id }}">{{ $panel->name }}</option>
-                                {{-- <option value="">Klinik Kesihatan Seksyen 13</option> --}}
                                 @endforeach
                             </select>
                         </div>
@@ -103,7 +94,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="category">Category :</label>
-                            <select name="category" id="category" class="form-control">
+                            <select name="category_id" id="category_id" class="form-control">
                                 <option value="">--Select Category--</option>
                                 @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->title }}</option>
@@ -111,8 +102,8 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="">Details :</label>
-                            <textarea name="" id="" cols="5" rows="5" class="form-control" placeholder="Write your complaint here..."></textarea>
+                            <label for="detail">Details :</label>
+                            <textarea name="detail" id="detail" cols="5" rows="5" class="form-control" placeholder="Write your complaint here..."></textarea>
                         </div>
                         <div class="form-group">
                             <label for="">Attachment : </label>

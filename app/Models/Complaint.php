@@ -17,6 +17,8 @@ class Complaint extends Model
     protected $fillable = [
         'detail',
         'status',
+        'category_id',
+        'panel_id'
     ];
 
     // each and every complaint belongs to a user

@@ -31,7 +31,12 @@ Route::get('/contact', function () {
 Route::middleware(['auth', 'can:admin-views'])->group(function(){
     // Admin
     Route::get('/admin/dashboard', 'Admin\DashboardController@index')->name('admin.dashboard');
+
+    // Admin - complaint
     Route::get('/admin/complaints', 'Admin\ComplaintController@index')->name('admin.complaints');
+    Route::get('/admin/complaints/{complaint}', 'Admin\ComplaintController@show')->name('admin.complaints.show');
+    Route::get('/admin/complaints/{complaint}/edit', 'Admin\ComplaintController@edit')->name('admin.complaints.edit');
+    Route::post('/admin/complaints/{complaint}/update', 'Admin\ComplaintController@update')->name('admin.complaints.update');
 
     // Admin - account
     Route::get('/admin/users', 'Admin\UserController@index')->name('admin.users.index');
@@ -57,8 +62,13 @@ Route::middleware(['auth', 'can:admin-views'])->group(function(){
 Route::middleware(['auth', 'can:officer-views'])->group(function(){
     // Officer
     Route::get('/officer/dashboard', 'Officer\DashboardController@index')->name('officer.dashboard');
+
+    // Officer - complaint
     Route::get('/officer/complaints', 'Officer\ComplaintController@index')->name('officer.complaints.index'); 
     Route::get('/officer/complaints/pick', 'Officer\ComplaintController@pick')->name('officer.complaints.pick');
+    Route::get('/officer/complaints/{complaint}', 'Officer\ComplaintController@show')->name('officer.complaints.show');
+    Route::get('/officer/complaints/{complaint}/edit', 'Officer\ComplaintController@edit')->name('officer.complaints.edit');
+    Route::post('/officer/complaints/{complaint}/update', 'Officer\ComplaintController@update')->name('officer.complaints.update');
 
     // Officer - account
     Route::get('/officer/account/profile', 'Officer\UserController@profile')->name('officer.users.profile');

@@ -33,7 +33,20 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
+                        @foreach ($complaints as $complaint)
+                            @if (auth()->user()->id == $complaint->user_id)
+                            <tr>
+                                <td>{{ $complaint->id }}</td>
+                                <td>{{ $complaint->panel->name }}</td>
+                                <td>{{ $complaint->category->title }}</td>
+                                <td><div class="badge badge-primary badge-pill">{{ $complaint->priority }}</div></td>
+                                <td><div class="badge badge-warning badge-pill">{{ $complaint->status }}</div></td>
+                                <td>{{ $complaint->created_at->diffForHumans() }}</td>
+                                <td><a href="{{ route('officer.complaints.show', $complaint->id) }}" class="badge badge-info">See More</a></td>
+                            </tr>
+                            @endif
+                        @endforeach
+                        {{-- <tr>
                             <td>1012</td>
                             <td>Klinik Kesihatan Puchong</td>
                             <td>Broken TV Display</td>
@@ -50,7 +63,7 @@
                             <td><div class="badge badge-success badge-pill">Closed</div></td>
                             <td>02/04/2021</td>
                             <td><a href="" class="badge badge-info">See More</a></td>
-                        </tr>
+                        </tr> --}}
                     </tbody>
                 </table>
             </div>

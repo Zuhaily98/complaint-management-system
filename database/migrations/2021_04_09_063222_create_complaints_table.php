@@ -16,7 +16,7 @@ class CreateComplaintsTable extends Migration
         Schema::create('complaints', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->unsignedBigInteger('guest_id');
@@ -27,10 +27,10 @@ class CreateComplaintsTable extends Migration
 
             $table->unsignedBigInteger('panel_id');    
             $table->foreign('panel_id')->references('id')->on('panels');
-
+            
             $table->text('detail');
-            $table->integer('priority');
-            $table->integer('status');
+            $table->enum('priority', ['High', 'Low'])->default('Low');
+            $table->enum('status', ['Pending', 'Closed'])->default('Pending');
             $table->timestamps();
         });
     }
