@@ -52,10 +52,20 @@ Route::middleware(['auth', 'can:admin-views'])->group(function(){
     Route::get('/admin/person-in-charges/', 'Admin\PersonInChargeController@index')->name('admin.person_in_charges.index');
     Route::get('/admin/person-in-charges/create', 'Admin\PersonInChargeController@create')->name('admin.person_in_charges.create');
 
-    // Admin - place
+    // Admin - place : state
+    Route::get('/admin/states', 'Admin\StateController@index')->name('admin.states.index');
     Route::get('/admin/states/create', 'Admin\StateController@create')->name('admin.states.create');
+    Route::post('/admin/states/create', 'Admin\StateController@store')->name('admin.states.store');
+
+    // Admin - place : city
+    Route::get('/admin/cities', 'Admin\CityController@index')->name('admin.cities.index');
     Route::get('/admin/cities/create', 'Admin\CityController@create')->name('admin.cities.create');
+    Route::post('/admin/cities/create', 'Admin\CityController@store')->name('admin.cities.store');
+
+    // Admin - place : district
+    Route::get('/admin/districts', 'Admin\DistrictController@index')->name('admin.districts.index');
     Route::get('/admin/districts/create', 'Admin\DistrictController@create')->name('admin.districts.create');
+    Route::post('/admin/districts/create', 'Admin\DistrictController@store')->name('admin.districts.store');
 });
 
 

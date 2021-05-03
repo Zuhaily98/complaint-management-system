@@ -36,26 +36,18 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
-                            <td>504</td>
-                            <td><div class="badge badge-warning badge-pill">Clinic</div></td>
-                            <td>Klinik Kesihatan Shah Alam Seksyen 7</td>
-                            <td>Seksyen 7</td>
-                            <td>Shah Alam</td>
-                            <td>Selangor</td>
-                            <td>No.2, Persiaran Kayangan, Seksyen 7, 40000 Shah Alam, Selangor</td>
-                            <td><a href="" class="badge badge-info">See More</a></td>
-                        </tr>
-                        <tr>
-                            <td>505</td>
-                            <td><div class="badge badge-success badge-pill">Hospital</div></td>
-                            <td>Hospital Shah Alam</td>
-                            <td>Seksyen 7</td>
-                            <td>Shah Alam</td>
-                            <td>Selangor</td>
-                            <td>Persiaran Kayangan, Seksyen 7, 40000 Shah Alam, Selangor</td>
-                            <td><a href="" class="badge badge-info">See More</a></td>
-                        </tr>
+                        @foreach ($panels as $panel)
+                            <tr>
+                                <td>{{ $panel->id }}</td>
+                                <td>{{ $panel->type }}</td>
+                                <td>{{ $panel->name }}</td>
+                                <td>{{$panel->district->district}}</td>
+                                <td>{{$panel->district->city->city}}</td>
+                                <td>{{$panel->district->city->state->state}}</td>
+                                <td>{{ $panel->address }}, {{$panel->district->district}}, {{$panel->postcode}} {{$panel->district->city->city}}, {{$panel->district->city->state->state}}</td>
+                                <td><a href="" class="badge badge-info">See More</a></td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

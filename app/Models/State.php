@@ -9,6 +9,8 @@ class State extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['state'];
+
     // a state has many cities
     public function cities()
     {

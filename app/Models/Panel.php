@@ -34,7 +34,7 @@ class Panel extends Model
     }
 
     // a panel belongs to a district
-    public function districts()
+    public function district()
     {
         return $this->belongsTo(District::class);
     }

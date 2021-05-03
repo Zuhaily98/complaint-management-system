@@ -12,7 +12,7 @@ class District extends Model
     // a district belongs to a city
     public function city()
     {
-        return $this->belongTo(City::class);
+        return $this->belongsTo(City::class);
     }
 
     // a district has many panels

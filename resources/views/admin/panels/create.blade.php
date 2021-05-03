@@ -26,7 +26,8 @@
             <div class="card">
                 <div class="card-header">Panel Details</div>
                 <div class="card-body">
-                    <form>
+                    <form action="{{ route('admin.panels.create') }}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label class="small mb-1" for="">Panel Type</label>
                             <select name="" id="" class="form-control">

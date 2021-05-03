@@ -137,10 +137,9 @@
                 </a>
                 <div class="collapse" id="collapseUtilities" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav">
-                        <a class="nav-link" href="animations.html">List of Places</a>
-                        <a class="nav-link" href="{{ route('admin.states.create') }}">Add State</a>
-                        <a class="nav-link" href="{{ route('admin.cities.create') }}">Add City</a>
-                        <a class="nav-link" href="{{ route('admin.districts.create') }}">Add District</a>
+                        <a class="nav-link" href="{{ route('admin.states.index') }}">State List</a>
+                        <a class="nav-link" href="{{ route('admin.cities.index') }}">City List</a>
+                        <a class="nav-link" href="{{ route('admin.districts.index') }}">District List</a>
                     </nav>
                 </div>
             </div>

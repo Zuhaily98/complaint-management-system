@@ -28,15 +28,16 @@
             <div class="card">
                 <div class="card-header">Add State</div>
                 <div class="card-body">
-                    <form>
+                    <form action="{{ route('admin.states.store') }}" method="POST">
+                        @csrf
                         <!-- Form Group ( name)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="">Enter State Name</label>
-                            <input class="form-control" id="" type="text" placeholder="Ex: Selangor"
+                            <label class="small mb-1" for="state">Enter State Name</label>
+                            <input class="form-control" name="state" id="state" type="text" placeholder="Ex: Selangor"
                                 value="" />
                         </div>
                         <!-- Save changes button-->
-                        <button class="btn btn-primary" type="button">Add State</button>
+                        <button class="btn btn-primary" type="submit">Add State</button>
                     </form>
                 </div>
             </div>
