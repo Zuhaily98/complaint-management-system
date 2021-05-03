@@ -28,23 +28,25 @@
             <div class="card">
                 <div class="card-header">Add City</div>
                 <div class="card-body">
-                    <form>
+                    <form action="{{ route('admin.cities.store') }}" method="POST">
+                        @csrf
                         <!-- Form Group ( name)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="">Choose a State</label>
-                            <select name="" id="" class="form-control">
+                            <label class="small mb-1" for="state">Choose a State</label>
+                            <select name="state_id" id="state" class="form-control">
                                 <option value="">--Select State--</option>
-                                <option value="">Selangor</option>
-                                <option value="">Kuala Lumpur</option>
+                                @foreach ($states as $state)
+                                    <option value="{{ $state->id }}">{{ $state->state }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <!-- Form Group (email)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="">Enter City Name</label>
-                            <input class="form-control" id="" type="text" placeholder="Ex: Shah Alam">
+                            <label class="small mb-1" for="city">Enter City Name</label>
+                            <input class="form-control" name="city" id="city" type="text" placeholder="Ex: Shah Alam">
                         </div>
                         <!-- Save changes button-->
-                        <button class="btn btn-primary" type="button">Add City</button>
+                        <button class="btn btn-primary" type="submit">Add City</button>
                     </form>
                 </div>
             </div>

@@ -9,6 +9,8 @@ class City extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['city', 'state_id'];
+
     // a city belongs to a state
     public function state()
     {

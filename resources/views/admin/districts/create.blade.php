@@ -28,32 +28,35 @@
             <div class="card">
                 <div class="card-header">Add District</div>
                 <div class="card-body">
-                    <form>
+                    <form action="{{ route('admin.districts.store') }}" method="POST">
+                        @csrf
                         <!-- Form Group ( state )-->
                         <div class="form-group">
-                            <label class="small mb-1" for="">Choose State</label>
-                            <select name="" id="" class="form-control">
+                            <label class="small mb-1" for="state">Choose State</label>
+                            <select name="state_id" id="state_id" class="form-control">
                                 <option value="">--Select State--</option>
-                                <option value="">Selangor</option>
-                                <option value="">Kuala Lumpur</option>
+                                @foreach ($states as $state)
+                                    <option value="{{ $state->id }}">{{ $state->state }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <!-- Form Group (city)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="">Choose City</label>
-                            <select name="" id="" class="form-control">
+                            <label class="small mb-1" for="city">Choose City</label>
+                            <select name="city_id" id="city_id" class="form-control">
                                 <option value="">--Select City--</option>
-                                <option value="">Shah Alam</option>
-                                <option value="">Klang</option>
+                                @foreach ($cities as $city)
+                                    <option value="{{ $city->id }}">{{ $city->city }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <!-- Form Group ( district )-->
                         <div class="form-group">
-                            <label class="small mb-1" for="">Enter District Name</label>
-                            <input class="form-control" id="" type="text" placeholder="Ex: Seksyen 13" value="" />
+                            <label class="small mb-1" for="district">Enter District Name</label>
+                            <input class="form-control" name="district" id="district" type="text" placeholder="Ex: Seksyen 13" value="" />
                         </div>
                         <!-- Save changes button-->
-                        <button class="btn btn-primary" type="button">Add District</button>
+                        <button class="btn btn-primary" type="submit">Add District</button>
                     </form>
                 </div>
             </div>
