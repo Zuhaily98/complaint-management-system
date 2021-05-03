@@ -18,7 +18,7 @@
                             <th>Complaint Details</th>
                             <th>Complaint Status</th>
                             <th>Complaint Date</th>
-                            <th>Assigned Officer</th>
+                            <th>Assigned Crew</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -30,7 +30,7 @@
                             <th>Complaint Details</th>
                             <th>Complaint Status</th>
                             <th>Complaint Date</th>
-                            <th>Assigned Officer</th>
+                            <th>Assigned Crew</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>

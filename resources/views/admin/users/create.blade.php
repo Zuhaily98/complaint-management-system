@@ -47,7 +47,7 @@
                                     <select name="role" id="role" class="form-control">
                                         <option value="">-- Select Role --</option>
                                         <option value="">Administrator</option>
-                                        <option value="">Officer</option>
+                                        <option value="">Crew</option>
                                     </select>
                                 </div>
                                 <!-- Form Group (email address)-->

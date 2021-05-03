@@ -50,7 +50,6 @@
                 <div class="collapse" id="collapseFlows" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ route('admin.complaints') }}">List of Complaint</a>
-                        <a class="nav-link" href="#">Search Complaint</a>
                     </nav>
                 </div>
                 <!-- Sidenav Heading (Account management)-->
