@@ -11,13 +11,13 @@
                     <div class="heading_main text_align_center">
                         <h3>What You Can Do.</h3>
                     </div>
-                    <div class="heading_main text_align_center">
+                    {{-- <div class="heading_main text_align_center">
                        <div class="one">
                           <a href="{{ route('guest.create') }}" class="btn btn-outline-success">Create a Complaint</a>
                           <a href="{{ route('guest.index') }}" class="btn btn-outline-info">Search your Complaint</a>
                           <a href="/contact" class="btn btn-outline-danger">Contact Us</a>
                        </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

@@ -34,7 +34,8 @@
                     <div class="card mb-4">
                         <div class="card-header">Account Details</div>
                         <div class="card-body">
-                            <form>
+                            <form action="" method="POST">
+                                @csrf
                                 <!-- Form Group (username)-->
                                 <div class="form-group">
                                     <label class="small mb-1" for="inputUsername">Name</label>
@@ -46,8 +47,8 @@
                                     <label class="small mb-1" for="role">Role</label>
                                     <select name="role" id="role" class="form-control">
                                         <option value="">-- Select Role --</option>
-                                        <option value="">Administrator</option>
-                                        <option value="">Crew</option>
+                                        <option value="admin">Administrator</option>
+                                        <option value="officer">Crew</option>
                                     </select>
                                 </div>
                                 <!-- Form Group (email address)-->
@@ -91,7 +92,7 @@
 
                                 </div>
                                 <!-- Save changes button-->
-                                <button class="btn btn-primary" type="button">Create New Admin</button>
+                                <button class="btn btn-primary float-right" type="button">Register New Admin</button>
                             </form>
                         </div>
                     </div>

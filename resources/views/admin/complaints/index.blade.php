@@ -40,8 +40,20 @@
                                 <td>{{ $complaint->id }}</td>
                                 <td>{{ $complaint->panel->name }}</td>
                                 <td>{{ $complaint->category->title }}</td>
-                                <td><div class="badge badge-primary badge-pill">{{ $complaint->priority }}</div></td>
-                                <td><div class="badge badge-warning badge-pill">{{ $complaint->status }}</div></td>
+                                <td>
+                                    @if ($complaint->priority == 'Low')
+                                        <div class="badge badge-primary badge-pill">Low</div>
+                                    @elseif ($complaint->priority == 'High')
+                                        <div class="badge badge-danger badge-pill">High</div>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($complaint->status == 'Pending')
+                                        <div class="badge badge-warning badge-pill">Pending</div>
+                                    @elseif ($complaint->status == 'Closed')
+                                        <div class="badge badge-danger badge-pill">Closed</div>
+                                    @endif
+                                </td>
                                 <td>{{ $complaint->created_at->diffForHumans() }}</td>
                                 <td>{{ $complaint->user ? $complaint->user->name : 'Not Assigned' }}</td> <!-- Using Ternary to check there is user id or not -->
                                 <td><a href="{{ route('admin.complaints.show', $complaint->id) }}" class="badge badge-info">See More</a></td>

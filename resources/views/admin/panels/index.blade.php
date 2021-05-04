@@ -39,7 +39,13 @@
                         @foreach ($panels as $panel)
                             <tr>
                                 <td>{{ $panel->id }}</td>
-                                <td>{{ $panel->type }}</td>
+                                <td>
+                                    @if ($panel->type == 'Hospital')
+                                        <div class="badge badge-success">Hospital</div>
+                                    @elseif ($panel->type == 'Clinic')
+                                        <div class="badge badge-secondary">Clinic</div> 
+                                    @endif
+                                </td>
                                 <td>{{ $panel->name }}</td>
                                 <td>{{$panel->district->district}}</td>
                                 <td>{{$panel->district->city->city}}</td>

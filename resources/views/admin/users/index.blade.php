@@ -24,7 +24,6 @@
                             <th>User ID</th>
                             <th>Full Name</th>
                             <th>Email</th>
-                            <th>Phone Number</th>
                             <th>User Type</th>
                             <th>Action</th>
                         </tr>
@@ -34,28 +33,28 @@
                             <th>User ID</th>
                             <th>Full Name</th>
                             <th>Email</th>
-                            <th>Phone Number</th>
                             <th>User Type</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
-                            <td>101</td>
-                            <td>Nur Iman Hafiz</td>
-                            <td>iman98@gmail.com</td>
-                            <td>0145365895</td>
-                            <td><div class="badge badge-danger badge-pill">Administrator</div></td>
-                            <td><a href="" class="badge badge-info">See More</a></td>
-                        </tr>
-                        <tr>
-                            <td>102</td>
-                            <td>Ahmad Affeeff</td>
-                            <td>affeff@hotmail.com</td>
-                            <td>0175026423</td>
-                            <td><div class="badge bg-dark text-light">Officer</div></td>
-                            <td><a href="" class="badge badge-info">See More</a></td>
-                        </tr>
+                        @foreach ($users as $user)
+                            <tr>
+                                <td>{{ $user->id }}</td>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>
+                                    @if ($user->role == 'admin')
+                                        <a class="badge badge-danger">Admin</a>
+                                    @elseif ($user->role == 'officer')
+                                        <a class="badge badge-secondary">Crew</a>
+                                    @endif
+
+                                    
+                                </td>
+                                <td><a href="" class="badge badge-primary">See More</a></td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
