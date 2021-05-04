@@ -18,6 +18,7 @@ class PersonInCharge extends Model
         'name',
         'email',
         'phone',
+        'panel_id'
     ];
 
     // each and every pic are belongs to a panel 

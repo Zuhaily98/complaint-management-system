@@ -51,6 +51,7 @@ Route::middleware(['auth', 'can:admin-views'])->group(function(){
     // Admin - Person In Charge
     Route::get('/admin/person-in-charges/', 'Admin\PersonInChargeController@index')->name('admin.person_in_charges.index');
     Route::get('/admin/person-in-charges/create', 'Admin\PersonInChargeController@create')->name('admin.person_in_charges.create');
+    Route::post('/admin/person-in-charges/create', 'Admin\PersonInChargeController@store')->name('admin.person_in_charges.store');
 
     // Admin - place : state
     Route::get('/admin/states', 'Admin\StateController@index')->name('admin.states.index');

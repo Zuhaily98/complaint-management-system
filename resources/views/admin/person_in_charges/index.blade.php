@@ -32,22 +32,16 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
-                            <td>604</td>
-                            <td>Iqbal Bin Sabaruddin</td>
-                            <td>iqbal@gmail.com</td>
-                            <td>0145285563</td>
-                            <td>Hospital Shah Alam</td>
-                            <td><a href="" class="badge badge-info">See More</a></td>
-                        </tr>
-                        <tr>
-                            <td>605</td>
-                            <td>Arif Bin Saidi</td>
-                            <td>arif@gmail.com</td>
-                            <td>0132005647</td>
-                            <td>Klinik Kesihatan Bangi</td>
-                            <td><a href="" class="badge badge-info">See More</a></td>
-                        </tr>
+                        @foreach ($pics as $pic)
+                            <tr>
+                                <td>{{ $pic->id }}</td>
+                                <td>{{ $pic->name }}</td>
+                                <td>{{ $pic->email }}</td>
+                                <td>{{ $pic->phone }}</td>
+                                <td>{{ $pic->panel->name }}</td>
+                                <td><a href="" class="badge badge-primary">See More</a></td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -26,34 +26,36 @@
             <div class="card">
                 <div class="card-header">Person In Charge Details</div>
                 <div class="card-body">
-                    <form>
+                    <form action="{{ route('admin.person_in_charges.store') }}" method="POST">
+                        @csrf
                         <!-- Form Group ( name)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="">Full Name</label>
-                            <input class="form-control" id="" type="text" placeholder="Ex: Ahmad Bin Ali"
+                            <label class="small mb-1" for="name">Full Name</label>
+                            <input class="form-control" name="name" id="" type="text" placeholder="Ex: Ahmad Bin Ali"
                                 value="" />
                         </div>
                         <!-- Form Group (email)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="">Email</label>
-                            <input class="form-control" id="" type="text" placeholder="Ex: Ahmad@example.com">
+                            <label class="small mb-1" for="email">Email</label>
+                            <input class="form-control" name="email" id="" type="text" placeholder="Ex: Ahmad@example.com">
                         </div>
                         <!-- Form Group (phone )-->
                         <div class="form-group">
-                            <label class="small mb-1" for="">Phone Number</label>
-                            <input class="form-control" id="" type="text" placeholder="Ex: 0123456789" value="" />
+                            <label class="small mb-1" for="phone">Phone Number</label>
+                            <input class="form-control" name="phone" id="" type="text" placeholder="Ex: 0123456789" value="" />
                         </div>
                         <!-- Form Group (Panel)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="">Choose Panel</label>
-                            <select name="" id="" class="form-control">
+                            <label class="small mb-1" for="panel">Choose Panel</label>
+                            <select name="panel_id" id="panel_id" class="form-control">
                                 <option value="">--Select Panel--</option>
-                                <option value="">Klinik Kesihatan Seksyen 7</option>
-                                <option value="">Klinik Kesihatan Klang</option>
+                                @foreach ($panels as $panel)
+                                    <option value="{{ $panel->id }}">{{ $panel->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <!-- Save changes button-->
-                        <button class="btn btn-primary" type="button">Add Person In Charge</button>
+                        <button class="btn btn-primary" type="submit">Create Person In Charge</button>
                     </form>
                 </div>
             </div>
