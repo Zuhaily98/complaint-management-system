@@ -19,6 +19,7 @@ class Panel extends Model
         'name',
         'address',
         'postcode',
+        'district_id'
     ];
 
     // 1 panel has many complaints

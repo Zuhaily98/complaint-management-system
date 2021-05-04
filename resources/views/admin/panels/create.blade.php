@@ -26,48 +26,50 @@
             <div class="card">
                 <div class="card-header">Panel Details</div>
                 <div class="card-body">
-                    <form action="{{ route('admin.panels.create') }}" method="POST">
+                    <form action="{{ route('admin.panels.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label class="small mb-1" for="">Panel Type</label>
-                            <select name="" id="" class="form-control">
+                            <label class="small mb-1" for="type">Panel Type</label>
+                            <select name="type" id="type" class="form-control">
                                 <option value="">--Select Type--</option>
-                                <option value="">Clinic</option>
-                                <option value="">Hospital</option>
+                                <option value="Clinic">Clinic</option>
+                                <option value="Hospital">Hospital</option>
                             </select>
                         </div>
                         <!-- Form Group (Panel name)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="">Panel Name</label>
-                            <input class="form-control" id="" type="text" placeholder="Ex: Klinik Kesihatan Seksyen 7"
+                            <label class="small mb-1" for="name">Panel Name</label>
+                            <input class="form-control" name="name" id="name" type="text" placeholder="Ex: Klinik Kesihatan Seksyen 7"
                                 value="" />
                         </div>
                         <!-- Form Group (address)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="">Address</label>
-                            <input class="form-control" id="" type="text" placeholder="Ex: No.2, Persiaran Kayangan">
+                            <label class="small mb-1" for="address">Address</label>
+                            <input class="form-control" name="address" id=address" type="text" placeholder="Ex: No.2, Persiaran Kayangan">
                         </div>
                         <!-- Form Group (Postal code)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="">Postcode</label>
-                            <input class="form-control" id="" type="text" placeholder="Ex: 40000" value="" />
+                            <label class="small mb-1" for="postcode">Postcode</label>
+                            <input class="form-control" name="postcode" id="postcode" type="text" placeholder="Ex: 40000" value="" />
                         </div>
                         <!-- Form Group (District)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="">District</label>
-                            <select name="" id="" class="form-control">
+                            <label class="small mb-1" for="district">District</label>
+                            <select name="district_id" id="district_id" class="form-control">
                                 <option value="">--Select District--</option>
-                                <option value="">Seksyen 7</option>
-                                <option value="">Seksyen 13</option>
+                                @foreach ($districts as $district)
+                                    <option value="{{ $district->id }}">{{ $district->district }}</option>
+                                @endforeach
                             </select>
                         </div>
-                        <!-- Form Group (City)-->
+                        {{-- <!-- Form Group (City)-->
                         <div class="form-group">
                             <label class="small mb-1" for="">City</label>
                             <select name="" id="" class="form-control">
                                 <option value="">--Select City--</option>
-                                <option value="">Shah Alam</option>
-                                <option value="">Klang</option>
+                                @foreach ($cities as $city)
+                                    <option value="{{ $city->id }}">{{ $city->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <!-- Form Group (State)-->
@@ -78,14 +80,14 @@
                                 <option value="">Selangor</option>
                                 <option value="">Seksyen 13</option>
                             </select>
-                        </div>
+                        </div>  --}}
                         <!-- Form Group (Location)-->
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label class="small mb-1" for="">Location</label>
                             <p>--</p>
-                        </div>
+                        </div> --}}
                         <!-- Save changes button-->
-                        <button class="btn btn-primary" type="button">Save Panel</button>
+                        <button class="btn btn-primary" type="submit">Save Panel</button>
                     </form>
                 </div>
             </div>

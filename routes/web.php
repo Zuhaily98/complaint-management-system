@@ -43,10 +43,12 @@ Route::middleware(['auth', 'can:admin-views'])->group(function(){
     Route::get('/admin/users/profile', 'Admin\UserController@profile')->name('admin.users.profile');
     Route::get('/admin/users/password', 'Admin\UserController@password')->name('admin.users.password');
     Route::get('/admin/users/create', 'Admin\UserController@create')->name('admin.users.create');
+    Route::post('/admin/users/store', 'Admin\UserController@store')->name('admin.users.store');
 
     // Admin - panel
     Route::get('/admin/panels/', 'Admin\PanelController@index')->name('admin.panels.index');
     Route::get('/admin/panels/create', 'Admin\PanelController@create')->name('admin.panels.create');
+    Route::post('/admin/panels/create', 'Admin\PanelController@store')->name('admin.panels.store');
 
     // Admin - Person In Charge
     Route::get('/admin/person-in-charges/', 'Admin\PersonInChargeController@index')->name('admin.person_in_charges.index');

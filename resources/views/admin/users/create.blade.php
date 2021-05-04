@@ -1,7 +1,7 @@
 @extends('admin.main')
 
 @section('title')
-    Create Admin :: Complaint Management System
+    Register Staff :: Complaint Management System
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
                         <div class="col-auto mb-3">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="user"></i></div>
-                                Create Staff Account
+                                Register New Staff Account
                             </h1>
                         </div>
                     </div>
@@ -34,14 +34,8 @@
                     <div class="card mb-4">
                         <div class="card-header">Account Details</div>
                         <div class="card-body">
-                            <form action="" method="POST">
+                            <form action="{{ route('admin.users.store') }}" method="POST">
                                 @csrf
-                                <!-- Form Group (username)-->
-                                <div class="form-group">
-                                    <label class="small mb-1" for="inputUsername">Name</label>
-                                    <input class="form-control" id="inputUsername" type="text" placeholder="Enter Name"
-                                        value="" />
-                                </div>
                                 <!-- Form Group (role) -->
                                 <div class="form-group">
                                     <label class="small mb-1" for="role">Role</label>
@@ -51,21 +45,19 @@
                                         <option value="officer">Crew</option>
                                     </select>
                                 </div>
+
+                                <!-- Form Group (username)-->
+                                <div class="form-group">
+                                    <label class="small mb-1" for="name">Name</label>
+                                    <input id="name" type="text" placeholder="Enter Name.." class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                </div>
+                                
                                 <!-- Form Group (email address)-->
                                 <div class="form-group">
-                                    <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                    <input class="form-control" id="inputEmailAddress" type="email"
-                                        placeholder="Enter email address" value="" />
+                                    <label class="small mb-1" for="email">Email address</label>
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Enter Email Address.."/>
                                 </div>
-                                <!-- Form Row-->
-                                <div class="form-row">
-                                    <!-- Form Group (phone number)-->
-                                    <div class="form-group col-md-6">
-                                        <label class="small mb-1" for="inputPhone">Phone number</label>
-                                        <input class="form-control" id="inputPhone" type="tel"
-                                            placeholder="Enter phone number" value="" />
-                                    </div>
-                                </div>
+                                
                                 <!-- Form Group (password)-->
                                 <div class="form-group">
                                     <label for="password" class="small mb-1">{{ __('Password') }}</label>
@@ -75,11 +67,11 @@
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="new-password">
 
-                                    @error('password')
+                                    {{-- @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
-                                    @enderror
+                                    @enderror --}}
 
                                 </div>
                                 <!-- Form Group (confirm password)-->
@@ -92,7 +84,7 @@
 
                                 </div>
                                 <!-- Save changes button-->
-                                <button class="btn btn-primary float-right" type="button">Register New Admin</button>
+                                <button class="btn btn-primary float-right" type="submit">Register New Admin</button>
                             </form>
                         </div>
                     </div>
