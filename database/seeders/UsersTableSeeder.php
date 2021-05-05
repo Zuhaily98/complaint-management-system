@@ -17,16 +17,30 @@ class UsersTableSeeder extends Seeder
     {
         User::create([
             'name' => 'Admin Ahmad',
-            'email' => 'ahmad@medkad.com',
+            'email' => 'admin@medkad.com',
             'role' => 'admin',
             'password' => Hash::make('admin@medkad.com')
         ]);
 
         User::create([
+            'name' => 'Admin Iman',
+            'email' => 'iman@medkad.com',
+            'role' => 'admin',
+            'password' => Hash::make('iman@medkad.com')
+        ]);
+
+        User::create([
             'name' => 'Officer Abu',
-            'email' => 'abu@medkad.com',
+            'email' => 'crew@medkad.com',
             'role' => 'officer',
-            'password' => Hash::make('officer@medkad.com')
+            'password' => Hash::make('crew@medkad.com')
+        ]);
+
+        User::create([
+            'name' => 'Officer Adib',
+            'email' => 'adib@medkad.com',
+            'role' => 'officer',
+            'password' => Hash::make('adib@medkad.com')
         ]);
     }
 }

@@ -27,8 +27,8 @@ class CreatePanelsTable extends Migration
             $table->string('name');
             $table->text('address');
             $table->string('postcode');
-            $table->integer('latitude');
-            $table->integer('longitude');
+            $table->double('latitude')->nullable();
+            $table->double('longitude')->nullable();
             $table->timestamps();
         });
     }
