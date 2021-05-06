@@ -42,9 +42,11 @@ Route::middleware(['auth', 'can:admin-views'])->group(function(){
     // Admin - account
     Route::get('/admin/users', 'Admin\UserController@index')->name('admin.users.index');
     Route::get('/admin/users/profile', 'Admin\UserController@profile')->name('admin.users.profile');
+    Route::post('/admin/users/profile/{user}/update', 'Admin\UserController@profileUpdate')->name('admin.users.profile.update');
     Route::get('/admin/users/password', 'Admin\UserController@password')->name('admin.users.password');
     Route::get('/admin/users/create', 'Admin\UserController@create')->name('admin.users.create');
-    Route::post('/admin/users/store', 'Admin\UserController@store')->name('admin.users.store');
+    Route::post('/admin/users/store', 'Admin\UserController@store')->name('admin.users.store');    
+  
 
     // Admin - panel
     Route::get('/admin/panels/', 'Admin\PanelController@index')->name('admin.panels.index');

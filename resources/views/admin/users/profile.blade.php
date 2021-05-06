@@ -49,36 +49,23 @@
                     <div class="card mb-4">
                         <div class="card-header">Account Details</div>
                         <div class="card-body">
-                            <form>
+                            <form action="{{ route('admin.users.profile.update', Auth::user()->id) }}" method="POST">
+                                @csrf
                                 <!-- Form Group (username)-->
                                 <div class="form-group">
                                     <label class="small mb-1" for="inputUsername">Name</label>
-                                    <input class="form-control" id="inputUsername" type="text" placeholder=""
+                                    <input class="form-control" name="name" id="inputUsername" type="text" placeholder=""
                                         value="{{ Auth::user()->name }}" />
                                 </div>
                                 <!-- Form Group (email address)-->
                                 <div class="form-group">
                                     <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                    <input class="form-control" id="inputEmailAddress" type="email"
+                                    <input class="form-control" name="email" id="inputEmailAddress" type="email"
                                         placeholder="Enter your email address" value="{{ Auth::user()->email }}" />
                                 </div>
-                                <!-- Form Row-->
-                                <div class="form-row">
-                                    <!-- Form Group (phone number)-->
-                                    <div class="form-group col-md-6">
-                                        <label class="small mb-1" for="inputPhone">Phone number</label>
-                                        <input class="form-control" id="inputPhone" type="tel"
-                                            placeholder="Enter your phone number" value="555-123-4567" />
-                                    </div>
-                                    <!-- Form Group (birthday)-->
-                                    <div class="form-group col-md-6">
-                                        <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                        <input class="form-control" id="inputBirthday" type="text" name="birthday"
-                                            placeholder="Enter your birthday" value="06/10/1988" />
-                                    </div>
-                                </div>
+                               
                                 <!-- Save changes button-->
-                                <button class="btn btn-primary" type="button">Save changes</button>
+                                <button class="btn btn-primary" type="submit">Save changes</button>
                             </form>
                         </div>
                     </div>

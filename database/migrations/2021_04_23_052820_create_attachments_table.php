@@ -19,7 +19,7 @@ class CreateAttachmentsTable extends Migration
             $table->unsignedBigInteger('complaint_id');
             $table->foreign('complaint_id')->references('id')->on('complaints');
 
-            $table->string('attachment');
+            $table->string('attachment')->nullable();
             $table->timestamps();
         });
     }

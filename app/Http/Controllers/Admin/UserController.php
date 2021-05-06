@@ -18,6 +18,24 @@ class UserController extends Controller
         return view('admin.users.profile');
     }
 
+    public function profileUpdate(Request $request, User $user)
+    {
+        // dd($request->all());
+        $this->validate(request(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        ]);
+
+        $data = request()->only(['name', 'email']);
+
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+
+        $user->update($data);
+
+        return redirect(route('admin.users.profile'));
+    }
+
     public function password()
     {
         return view('admin.users.password');
