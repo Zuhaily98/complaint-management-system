@@ -1,12 +1,21 @@
 @extends('admin.main')
 
 @section('title')
-    View Complaint :: Complaint Management System
+    Show Complaint :: Complaint Management System
+@endsection
+
+@section('js')
+    <style>
+        .display-comment .display-comment {
+            margin-left: 40px
+        }
+
+    </style>
 @endsection
 
 @section('content')
     <div class="card mb-4">
-        <div class="card-header">View Complaint {{ $complaint->id }} Details</div>
+        <div class="card-header">Show Complaint {{ $complaint->id }} Details</div>
         <div class="card-body">
             <div class="form-group">
                 <label for="panel">Panel Name :</label>
@@ -31,6 +40,15 @@
             <div class="form-group">
                 <label for="officer">Assigned Officer :</label>
                 <input type="text" name="officer" id="officer" class="form-control" value="{{ $complaint->user ? $complaint->user->name : 'Not Assigned'}}" disabled>
+            </div>
+            <div class="card card-default my-4">
+                <div class="card-header">Display Remarks</div>
+                <div class="card-body">
+                    @if ($complaint->comments->count() > 0)
+                        @include('officer.complaints.partials.replies', ['comments' => $complaint->comments, 'complaint_id'
+                        => $complaint->id])
+                    @endif
+                </div>
             </div>
 
             <div class="form-group">

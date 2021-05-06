@@ -20,6 +20,11 @@ class ComplaintController extends Controller
         return view('guest.index');
     }
 
+    public function show(Complaint $complaint)
+    {
+        return view('guest.show')->with('complaint', $complaint);
+    }
+
     public function create()
     {
         return view('guest.create')
