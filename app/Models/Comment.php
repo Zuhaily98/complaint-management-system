@@ -21,9 +21,9 @@ class Comment extends Model
         return $this->hasMany(Comment::class, 'parent_id')->latest();
     }
 
-    // a comment belongs to a complaint
-    public function complaint()
-    {
-        return $this->belongsTo(Complaint::class);
-    }
+    // // a comment belongs to a complaint
+    // public function complaint()
+    // {
+    //     return $this->belongsTo(Complaint::class);
+    // }
 }

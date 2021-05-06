@@ -87,6 +87,10 @@ Route::middleware(['auth', 'can:officer-views'])->group(function(){
     // Officer - account
     Route::get('/officer/account/profile', 'Officer\UserController@profile')->name('officer.users.profile');
     Route::get('/officer/account/password', 'Officer\UserController@password')->name('officer.users.password');
+
+    // Officer - comment
+    Route::post('/officer/comments/store', 'Officer\CommentController@store')->name('comment.add');
+    Route::post('/officer/comments/reply/store', 'Officer\CommentController@replyStore')->name('reply.add');
 });
 
 
