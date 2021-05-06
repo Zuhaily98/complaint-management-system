@@ -34,7 +34,7 @@
                     <div class="card mb-4">
                         <div class="card-header">Account Details</div>
                         <div class="card-body">
-                            <form action="{{ route('admin.users.store') }}" method="POST">
+                            <form action="{{ route('admin.users.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <!-- Form Group (role) -->
                                 <div class="form-group">
@@ -83,8 +83,18 @@
                                         name="password_confirmation" required autocomplete="new-password">
 
                                 </div>
+
+                                <div class="form-group">
+                                    <!-- Profile picture image-->
+                                <a href="{{ env('APP_URL') }}/storage/{{ Auth::user()->picture }}" target="_blank">Open Picture</a>
+                                <!-- Profile picture help block-->
+                                <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                                <!-- Profile picture upload button-->
+                                <input type="file" name="picture" class="form-control">
+                                </div>
+
                                 <!-- Save changes button-->
-                                <button class="btn btn-primary float-right" type="submit">Register New Admin</button>
+                                <button class="btn btn-primary float-right" type="submit">Register New Staff</button>
                             </form>
                         </div>
                     </div>

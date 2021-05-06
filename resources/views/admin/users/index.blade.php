@@ -52,7 +52,7 @@
 
                                     
                                 </td>
-                                <td><a href="" class="badge badge-primary">See More</a></td>
+                                <td><a href="{{ route('admin.users.show', $user->id) }}" class="badge badge-primary">See More</a></td>
                             </tr>
                         @endforeach
                     </tbody>
