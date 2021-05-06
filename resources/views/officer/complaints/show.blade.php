@@ -49,27 +49,32 @@
                 </td>
             </div>
 
-            @if ($complaint->comments->count() > 0)
+            <div class="card card-default">
+                <div class="card-header">Display Remarks</div>
                 <div class="card-body">
-                    <h5>Display Comments</h5>
+                    @if ($complaint->comments->count() > 0)
                     @include('officer.complaints.partials.replies', ['comments' => $complaint->comments, 'complaint_id' => $complaint->id])
-                    <hr />
-                </div>
+                    
+                
             @endif
+                </div>
+            </div>
 
-            <div class="card-body">
-                <h5>Leave a comment</h5>
-                <form method="post" action="{{ route('comment.add') }}">
-                    @csrf
-                    <div class="form-group">
-                        <input type="text" name="comment" class="form-control" />
-                        <input type="hidden" name="complaint_id" value="{{ $complaint->id }}" />
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-sm btn-outline-danger py-0" style="font-size: 0.8em;"
-                            value="Add Comment" />
-                    </div>
-                </form>
+            <div class="card card-default my-3">
+                <div class="card-header">Leave a Remark</div>
+                <div class="card-body">
+                    <form method="post" action="{{ route('comment.add') }}">
+                        @csrf
+                        <div class="form-group">
+                            <input type="text" name="comment" class="form-control" placeholder="example: Clinic closed today"/>
+                            <input type="hidden" name="complaint_id" value="{{ $complaint->id }}" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-sm btn-danger"
+                                value="Add Comment" />
+                        </div>
+                    </form>
+                </div>
             </div>
 
             <div class="form-group">
