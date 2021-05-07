@@ -27,7 +27,12 @@
                     <!-- Profile picture card-->
                     <div class="card">
                         <div class="card-header">Profile Picture</div>
-                        <img src="{{ env('APP_URL') }}/storage/{{ $user->picture }}" alt="">
+                        <div class="card-body text-center">
+                            <!-- Profile picture image-->
+                            <img class="img-account-profile rounded-circle mb-2"
+                                src="{{ env('APP_URL') }}/storage/{{ $user->picture }}" alt="" />
+                                
+                        </div>
                     </div>
                 </div>
                 <div class="col-xl-8">

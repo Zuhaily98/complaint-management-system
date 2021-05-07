@@ -36,7 +36,7 @@
                         <div class="card-body text-center">
                             <!-- Profile picture image-->
                             <img class="img-account-profile rounded-circle mb-2"
-                                src="{{ asset('admin/assets/img/illustrations/profiles/profile-1.png') }}" alt="" />
+                                src="{{ env('APP_URL') }}/storage/{{ Auth::user()->picture }}" alt="" />
                             <!-- Profile picture help block-->
                             <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                             <!-- Profile picture upload button-->
@@ -61,21 +61,6 @@
                                     <label class="small mb-1" for="inputEmailAddress">Email address</label>
                                     <input class="form-control" id="inputEmailAddress" type="email"
                                         placeholder="Enter your email address" value="{{ Auth::user()->email }}" />
-                                </div>
-                                <!-- Form Row-->
-                                <div class="form-row">
-                                    <!-- Form Group (phone number)-->
-                                    <div class="form-group col-md-6">
-                                        <label class="small mb-1" for="inputPhone">Phone number</label>
-                                        <input class="form-control" id="inputPhone" type="tel"
-                                            placeholder="Enter your phone number" value="555-123-4567" />
-                                    </div>
-                                    <!-- Form Group (birthday)-->
-                                    <div class="form-group col-md-6">
-                                        <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                        <input class="form-control" id="inputBirthday" type="text" name="birthday"
-                                            placeholder="Enter your birthday" value="06/10/1988" />
-                                    </div>
                                 </div>
                                 <!-- Save changes button-->
                                 <button class="btn btn-primary" type="button">Save changes</button>
