@@ -49,15 +49,19 @@
                                 <!-- Form Group (username)-->
                                 <div class="form-group">
                                     <label class="small mb-1" for="name">Name</label>
-                                    <input id="name" type="text" placeholder="Enter Name.." class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    <input id="name" type="text" placeholder="Enter Name.."
+                                        class="form-control @error('name') is-invalid @enderror" name="name"
+                                        value="{{ old('name') }}" required autocomplete="name" autofocus>
                                 </div>
-                                
+
                                 <!-- Form Group (email address)-->
                                 <div class="form-group">
                                     <label class="small mb-1" for="email">Email address</label>
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Enter Email Address.."/>
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                                        name="email" value="{{ old('email') }}" required autocomplete="email"
+                                        placeholder="Enter Email Address.." />
                                 </div>
-                                
+
                                 <!-- Form Group (password)-->
                                 <div class="form-group">
                                     <label for="password" class="small mb-1">{{ __('Password') }}</label>
@@ -74,6 +78,7 @@
                                     @enderror --}}
 
                                 </div>
+
                                 <!-- Form Group (confirm password)-->
                                 <div class="form-group">
                                     <label for="password-confirm" class="small mb-1">{{ __('Confirm Password') }}</label>
@@ -86,11 +91,12 @@
 
                                 <div class="form-group">
                                     <!-- Profile picture image-->
-                                <a href="{{ env('APP_URL') }}/storage/{{ Auth::user()->picture }}" target="_blank">Open Picture</a>
-                                <!-- Profile picture help block-->
-                                <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                                <!-- Profile picture upload button-->
-                                <input type="file" name="picture" class="form-control">
+                                    <a href="{{ env('APP_URL') }}/storage/{{ Auth::user()->picture }}"
+                                        target="_blank">Open Picture</a>
+                                    <!-- Profile picture help block-->
+                                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                                    <!-- Profile picture upload button-->
+                                    <input type="file" name="picture" class="form-control">
                                 </div>
 
                                 <!-- Save changes button-->

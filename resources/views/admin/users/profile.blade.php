@@ -14,6 +14,18 @@
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="user"></i></div>
                                 Account Settings - Profile
+                                <form action="{{ route('admin.users.profile.upload') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <!-- Profile picture image-->
+                                    <a href="{{ env('APP_URL') }}/storage/{{ Auth::user()->picture }}" target="_blank">Open Picture</a>
+                                    <!-- Profile picture help block-->
+                                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                                    <!-- Profile picture upload button-->
+                                    <input type="file" name="picture" class="form-control">
+    
+                                    <br>
+                                    <button class="btn btn-primary" type="submit">Upload new image</button>
+                                </form>
                             </h1>
                         </div>
                     </div>

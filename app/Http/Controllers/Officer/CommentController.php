@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\Complaint;
+use App\Notifications\NewRemarkAdded;
 
 class CommentController extends Controller
 {
@@ -27,6 +28,8 @@ class CommentController extends Controller
         $comment->complaint_id = $complaint->id;
         // dd($comment);    
         $complaint->comments()->save($comment);
+
+        $complaint->user->notify(new NewRemarkAdded($complaint));
         
         return back();
     }

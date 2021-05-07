@@ -27,11 +27,7 @@
                     <!-- Profile picture card-->
                     <div class="card">
                         <div class="card-header">Profile Picture</div>
-                        <div class="card-body text-center">
-                                <!-- Profile picture image-->
-                                <a href="{{ env('APP_URL') }}/storage/{{ $user->picture }}" target="_blank">Open Picture</a>
-                               
-                        </div>
+                        <img src="{{ env('APP_URL') }}/storage/{{ $user->picture }}" alt="">
                     </div>
                 </div>
                 <div class="col-xl-8">

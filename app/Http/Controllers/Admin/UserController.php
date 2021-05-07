@@ -41,7 +41,6 @@ class UserController extends Controller
     public function upload(Request $request, User $user)
     {
         $data = request()->only(['picture']);
-
         if($request->hasFile('picture'))
         {
             $filename = $user->id.'-'.date("d-m-Y").'.'.$request->picture->getClientOriginalExtension();
