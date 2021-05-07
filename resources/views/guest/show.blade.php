@@ -55,6 +55,12 @@
 
                     <div class="form-group">
                         <label for="">Attachment : </label>
+                        <br>
+                        @foreach ($attachments as $attachment)
+                        @if ($attachment->complaint_id == $complaint->id)
+                             <img width="300px" height="160px"  src="{{ env('APP_URL') }}/storage/{{ $attachment->attachment }}" alt="" />
+                        @endif
+                        @endforeach
                     </div>
 
                     @if ($complaint->comments->count() > 0)

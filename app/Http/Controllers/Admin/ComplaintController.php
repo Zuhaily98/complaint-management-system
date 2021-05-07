@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Complaint;
 use App\Models\User;
 use App\Notifications\NewComplaintUpdate;
+use App\Models\Attachment;
 
 class ComplaintController extends Controller
 {
@@ -18,7 +19,7 @@ class ComplaintController extends Controller
 
     public function show(Complaint $complaint)
     {
-        return view('admin.complaints.show')->with('complaint', $complaint);
+        return view('admin.complaints.show')->with('complaint', $complaint)->with('attachments', Attachment::all());
     }
 
     public function edit(Complaint $complaint)

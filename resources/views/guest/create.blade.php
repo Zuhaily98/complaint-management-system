@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('content')
-    <form action="{{ route('guest.complaints.store') }}" method="POST">
+    <form action="{{ route('guest.complaints.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="container">
@@ -78,8 +78,9 @@
                             <textarea name="detail" id="detail" cols="5" rows="5" class="form-control" placeholder="Write your complaint here..."></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="">Attachment : </label>
-                            <button class="btn btn-info btn-sm">Upload</button>
+                            <label for="">Attachment : </label><div class="form-group">
+                                <input type="file" name="attachment" class="form-control">
+                            </div>
                         </div>
                     </div>
                 </div>

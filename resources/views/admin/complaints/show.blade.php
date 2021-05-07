@@ -41,6 +41,15 @@
                 <label for="officer">Assigned Officer :</label>
                 <input type="text" name="officer" id="officer" class="form-control" value="{{ $complaint->user ? $complaint->user->name : 'Not Assigned'}}" disabled>
             </div>
+            <div class="form-group">
+                <label for="attachment">Attachment : </label>
+                @foreach ($attachments as $attachment)
+                @if ($attachment->complaint_id == $complaint->id)
+                    <img src="{{ env('APP_URL') }}/storage/{{ $attachment->attachment }}" alt="" />
+                @endif
+                @endforeach
+                
+            </div>
             <div class="card card-default my-4">
                 <div class="card-header">Display Remarks</div>
                 <div class="card-body">
