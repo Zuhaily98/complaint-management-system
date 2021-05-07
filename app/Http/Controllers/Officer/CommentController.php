@@ -49,6 +49,8 @@ class CommentController extends Controller
         $reply->complaint_id = $complaint->id;
         $complaint->comments()->save($reply);
 
+        $complaint->guest->notify(new NewRemarkAdded($complaint));
+
         return back();
     }
 }

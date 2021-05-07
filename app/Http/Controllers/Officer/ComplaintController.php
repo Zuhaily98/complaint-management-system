@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Complaint;
 use App\Models\User;
+use App\Notifications\NewComplaintUpdate;
 
 class ComplaintController extends Controller
 {
@@ -46,6 +47,8 @@ class ComplaintController extends Controller
         $complaint->status = $data['status'];
    
         $complaint->update($data);
+
+        $complaint->guest->notify(new NewComplaintUpdate($complaint));
 
         return redirect(route('officer.complaints.index'));
     }

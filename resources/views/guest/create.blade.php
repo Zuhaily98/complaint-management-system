@@ -40,26 +40,6 @@
                     <div class="card-header bg-danger text-white">Select Panel</div>
                     <div class="card-body">
                         <div class="form-group">
-                            
-                            <label for="type">Type :</label>
-                            <select name="type" id="type" class="form-control">
-                                <option value="">--Select Type--</option>
-                                @foreach ($panels as $panel)
-                                <option value="{{ $panel->id }}">{{ $panel->type }}</option>
-                                @endforeach
-                            </select>
-                           
-                        </div>
-                        <div class="form-group">
-                            <label for="state">State :</label>
-                            <select name="state" id="state" class="form-control">
-                                <option value="">--Select State--</option>
-                                @foreach ($states as $state)
-                                <option value="{{ $state->id }}">{{ $state->state }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label for="city">City :</label>
                             <select name="city" id="city" class="form-control">
                                 <option value="">--Select City--</option>
@@ -68,15 +48,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="district">District :</label>
-                            <select name="district" id="district" class="form-control">
-                                <option value="">--Select Disctrict--</option>
-                                @foreach ($districts as $district)
-                                <option value="{{ $district->id }}">{{ $district->district }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                        
                         <div class="form-group">
                             <label for="panel">Panel :</label>
                             <select name="panel" id="panel" class="form-control">

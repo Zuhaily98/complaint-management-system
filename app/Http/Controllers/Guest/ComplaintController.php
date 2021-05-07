@@ -64,6 +64,6 @@ class ComplaintController extends Controller
         // session()->flash('success', 'Complaint created successfully!');
 
         //redirect
-        return redirect(route('guest.message'));
+        return view('guest.message');
     }
 }
