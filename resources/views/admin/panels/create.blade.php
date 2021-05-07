@@ -54,7 +54,8 @@
                         </div>
                         <!-- Form Group (District)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="district">District</label>
+                            <label class="small mb-1" for="district" r>District</label>
+                            <a href="{{ route('admin.districts.create') }}" target="_blank" class="btn btn-primary btn-sm float-right">Create New District</a>
                             <select name="district_id" id="district_id" class="form-control">
                                 <option value="">--Select District--</option>
                                 @foreach ($districts as $district)

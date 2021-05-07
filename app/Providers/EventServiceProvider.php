@@ -7,7 +7,9 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
 use App\Observers\ComplaintObserver;
+use App\Observers\UserObserver;
 use App\Models\Complaint;
+use App\Models\User;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -30,5 +32,6 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         Complaint::observe(ComplaintObserver::class);
+        User::observe(UserObserver::class);
     }
 }
