@@ -32,7 +32,7 @@ class NewRemarkAdded extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail', 'database'];
     }
 
     /**
@@ -45,7 +45,7 @@ class NewRemarkAdded extends Notification
     {
         return (new MailMessage)
                     ->line('The Crew in charge of your complaint has added a new remark.')
-                    ->action('View Complaint', route('guest.complaints.show', $this->complaint->id))
+                    ->action('View Complaint', route('guest.complaints.show', $this->complaint->uuid))
                     ->line('We will keep you in touch for future updates on you complant. Thank you!');
     }
 
@@ -58,7 +58,7 @@ class NewRemarkAdded extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+            'data' => 'New Remark added'
         ];
     }
 }

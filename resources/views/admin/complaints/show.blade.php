@@ -43,9 +43,10 @@
             </div>
             <div class="form-group">
                 <label for="attachment">Attachment : </label>
+                <br>
                 @foreach ($attachments as $attachment)
                 @if ($attachment->complaint_id == $complaint->id)
-                    <img src="{{ env('APP_URL') }}/storage/{{ $attachment->attachment }}" alt="" />
+                    <img src="{{ env('APP_URL') }}/storage/{{ $attachment->attachment }}" width="300px" height="160px" alt="" />
                 @endif
                 @endforeach
                 

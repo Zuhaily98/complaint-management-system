@@ -17,9 +17,28 @@
                     <div class="heading_main text_align_center">
                         <h2>Your Complaint</h2>
                     </div>
-                    <div class="heading_main text_align_center">
-                        <h3>Complaint ID : {{ $complaint->id }}
-                        </h3>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card card-default my-5">
+                <div class="card-header bg-danger text-white">Your Information</div>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Complaint ID</span>
+                        <input type="text" value="{{ $complaint->uuid }}" class="form-control" readonly placeholder="Username" aria-label="uuid" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Complainer Name</span>
+                        <input type="text" value="{{ $complaint->guest->name }}" class="form-control" readonly placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Email</span>
+                        <input type="text" value="{{ $complaint->guest->email }}" class="form-control" readonly placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
                     </div>
                 </div>
             </div>
@@ -57,9 +76,10 @@
                         <label for="">Attachment :</label>
                         <br>
                         @foreach ($complaint->attachments as $attachment)
-                    
-                             <img width="300px" height="160px"  src="{{ env('APP_URL') }}/storage/{{ $attachment->attachment }}" alt="" />
-                      
+
+                            <img width="300px" height="160px"
+                                src="{{ env('APP_URL') }}/storage/{{ $attachment->attachment }}" alt="" />
+
                         @endforeach
                     </div>
 
@@ -75,7 +95,6 @@
                             </div>
                         </div>
                     @endif
-
                 </div>
             </div>
         </div>
