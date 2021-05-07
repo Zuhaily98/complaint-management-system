@@ -54,12 +54,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="">Attachment : </label>
+                        <label for="">Attachment :</label>
                         <br>
-                        @foreach ($attachments as $attachment)
-                        @if ($attachment->complaint_id == $complaint->id)
+                        @foreach ($complaint->attachments as $attachment)
+                    
                              <img width="300px" height="160px"  src="{{ env('APP_URL') }}/storage/{{ $attachment->attachment }}" alt="" />
-                        @endif
+                      
                         @endforeach
                     </div>
 
