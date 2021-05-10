@@ -15,10 +15,10 @@
                                 <div class="page-header-icon"><i data-feather="file"></i></div>
                                 Add a State
                             </h1>
-                            <div class="page-header-subtitle">Use this blank page as a starting point for creating new pages
-                                inside your project!</div>
+                            {{-- <div class="page-header-subtitle">Use this blank page as a starting point for creating new pages
+                                inside your project!</div> --}}
                         </div>
-                        <div class="col-12 col-xl-auto mt-4">Optional page header content</div>
+                        {{-- <div class="col-12 col-xl-auto mt-4">Optional page header content</div> --}}
                     </div>
                 </div>
             </div>

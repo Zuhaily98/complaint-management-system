@@ -15,10 +15,10 @@
                                 <div class="page-header-icon"><i data-feather="file"></i></div>
                                 Add a City
                             </h1>
-                            <div class="page-header-subtitle">Use this blank page as a starting point for creating new pages
-                                inside your project!</div>
+                            {{-- <div class="page-header-subtitle">Use this blank page as a starting point for creating new pages
+                                inside your project!</div> --}}
                         </div>
-                        <div class="col-12 col-xl-auto mt-4">Optional page header content</div>
+                        {{-- <div class="col-12 col-xl-auto mt-4">Optional page header content</div> --}}
                     </div>
                 </div>
             </div>
@@ -30,9 +30,16 @@
                 <div class="card-body">
                     <form action="{{ route('admin.cities.store') }}" method="POST">
                         @csrf
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label class="small mb-1" for="state">Choose a State</label>
+                            </div>
+                            <div class="col-auto">
+                                <a href="{{ route('admin.states.create') }}" target="_blank" class="badge badge-primary">Create New State</a>
+                            </div>
+                        </div>
                         <!-- Form Group ( name)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="state">Choose a State</label>
                             <select name="state_id" id="state" class="form-control">
                                 <option value="">--Select State--</option>
                                 @foreach ($states as $state)

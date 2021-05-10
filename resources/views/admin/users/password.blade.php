@@ -34,26 +34,27 @@
                     <div class="card mb-4">
                         <div class="card-header">Change Password</div>
                         <div class="card-body">
-                            <form>
+                            <form action="{{ route('admin.users.password.update', Auth::user()->id) }}" method="POST">
+                                @csrf
                                 <!-- Form Group (current password)-->
                                 <div class="form-group">
                                     <label class="small mb-1" for="currentPassword">Current Password</label>
-                                    <input class="form-control" id="currentPassword" type="password"
+                                    <input class="form-control" name="password" id="password" type="password"
                                         placeholder="Enter current password" />
                                 </div>
                                 <!-- Form Group (new password)-->
                                 <div class="form-group">
-                                    <label class="small mb-1" for="newPassword">New Password</label>
-                                    <input class="form-control" id="newPassword" type="password"
+                                    <label class="small mb-1" for="new-password">New Password</label>
+                                    <input class="form-control" name="new-password" id="new-password" type="password"
                                         placeholder="Enter new password" />
                                 </div>
                                 <!-- Form Group (confirm password)-->
                                 <div class="form-group">
-                                    <label class="small mb-1" for="confirmPassword">Confirm Password</label>
-                                    <input class="form-control" id="confirmPassword" type="password"
+                                    <label class="small mb-1" for="password_confirmation">Confirm Password</label>
+                                    <input class="form-control" name="password_confirmation" id="password_confirmation" type="password" required autocomplete="new-password"
                                         placeholder="Confirm new password" />
                                 </div>
-                                <button class="btn btn-primary" type="button">Save</button>
+                                <button class="btn btn-primary" type="submit">Save</button>
                             </form>
                         </div>
                     </div>

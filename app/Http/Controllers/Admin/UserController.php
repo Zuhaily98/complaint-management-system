@@ -57,6 +57,27 @@ class UserController extends Controller
         return view('admin.users.password');
     }
 
+    public function passwordUpdate(Request $request, User $user)
+    {
+        //dd($request->all());
+        $this->validate(request(), [
+            'new-password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password-confirmation' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $data = request()->only(['new-password', 'password']);
+
+        if ($user->password == Hash::make($data['password'])) {
+            $user->password = Hash::make($data['new-password']);  
+            $user->update($data);
+            dd($user);
+            return redirect(route('admin.users.profile'));
+        }
+        
+        return redirect(route('admin.users.profile'));
+        
+    }
+
     public function create()
     {
         return view('admin.users.create');

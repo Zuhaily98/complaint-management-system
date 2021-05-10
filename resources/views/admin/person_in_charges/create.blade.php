@@ -44,9 +44,16 @@
                             <label class="small mb-1" for="phone">Phone Number</label>
                             <input class="form-control" name="phone" id="" type="text" placeholder="Ex: 0123456789" value="" />
                         </div>
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label class="small mb-1" for="panel">Choose Panel</label>
+                            </div>
+                            <div class="col-auto">
+                                <a href="{{ route('admin.panels.create') }}" target="_blank" class="badge badge-primary">Create New Panel</a>
+                            </div>
+                        </div>
                         <!-- Form Group (Panel)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="panel">Choose Panel</label>
                             <select name="panel_id" id="panel_id" class="form-control">
                                 <option value="">--Select Panel--</option>
                                 @foreach ($panels as $panel)

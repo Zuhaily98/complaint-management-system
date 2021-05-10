@@ -52,10 +52,16 @@
                             <label class="small mb-1" for="postcode">Postcode</label>
                             <input class="form-control" name="postcode" id="postcode" type="text" placeholder="Ex: 40000" value="" />
                         </div>
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label class="small mb-1" for="district" r>District</label>
+                            </div>
+                            <div class="col-auto">
+                                <a href="{{ route('admin.districts.create') }}" target="_blank" class="badge badge-primary">Create New District</a>
+                            </div>
+                        </div>
                         <!-- Form Group (District)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="district" r>District</label>
-                            <a href="{{ route('admin.districts.create') }}" target="_blank" class="btn btn-primary btn-sm float-right">Create New District</a>
                             <select name="district_id" id="district_id" class="form-control">
                                 <option value="">--Select District--</option>
                                 @foreach ($districts as $district)

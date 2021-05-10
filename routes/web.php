@@ -50,6 +50,7 @@ Route::middleware(['auth', 'can:admin-views'])->group(function(){
     Route::post('/admin/users/profile/{user}/update', 'Admin\UserController@profileUpdate')->name('admin.users.profile.update');
     Route::post('/admin/users/profile/upload', 'Admin\UserController@upload')->name('admin.users.profile.upload');
     Route::get('/admin/users/password', 'Admin\UserController@password')->name('admin.users.password');
+    Route::post('/admin/users/password/{user}/update', 'Admin\UserController@passwordUpdate')->name('admin.users.password.update');
 
     Route::get('/admin/users/{user}', 'Admin\UserController@show')->name('admin.users.show');
     
