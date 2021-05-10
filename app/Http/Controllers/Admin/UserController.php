@@ -30,24 +30,27 @@ class UserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
         ]);
 
-        $data = request()->only(['name', 'email', 'picture']);
+        // $data = request()->only(['name', 'email']);
 
-        $user->name = $data['name'];
-        $user->email = $data['email'];
+        $user = $user->update($request->all());
 
-        $user->update($data);
+        // $user->name = $data['name'];
+        // $user->email = $data['email'];
+
+        // $user->update($data);
 
         return redirect(route('admin.users.profile'));
     }
 
-    public function upload(Request $request, User $user)
+    public function upload(Request $request)
     {
         $data = request()->only(['picture']);
+
         if($request->hasFile('picture'))
         {
-            $filename = $user->id.'-'.date("d-m-Y").'.'.$request->picture->getClientOriginalExtension();
+            $filename = auth()->user()->name.'-'.date("d-m-Y").'.'.$request->picture->getClientOriginalExtension();
             Storage::disk('public')->put($filename, File::get($request->picture));
-            $user->update(['attachment' => $filename]);
+            auth()->user()->update(['picture' => $filename]);
         }
 
         return redirect(route('admin.users.profile'));
