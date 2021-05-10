@@ -90,9 +90,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <!-- Profile picture image-->
-                                    <a href="{{ env('APP_URL') }}/storage/{{ Auth::user()->picture }}"
-                                        target="_blank">Open Picture</a>
+                                    <label for="picture" class="small mb-1">Upload Profile Picture</label>
                                     <!-- Profile picture help block-->
                                     <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                                     <!-- Profile picture upload button-->
@@ -105,21 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4">
-                    <!-- Profile picture card-->
-                    <div class="card">
-                        <div class="card-header">Profile Picture</div>
-                        <div class="card-body text-center">
-                            <!-- Profile picture image-->
-                            <img class="img-account-profile rounded-circle mb-2"
-                                src="{{ asset('admin/assets/img/illustrations/profiles/profile-1.png') }}" alt="" />
-                            <!-- Profile picture help block-->
-                            <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                            <!-- Profile picture upload button-->
-                            <button class="btn btn-primary" type="button">Upload new image</button>
-                        </div>
-                    </div>
-                </div>
+            
             </div>
         </div>
     </main>
