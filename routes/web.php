@@ -98,6 +98,11 @@ Route::middleware(['auth', 'can:officer-views'])->group(function(){
     Route::get('/officer/account/profile', 'Officer\UserController@profile')->name('officer.users.profile');
     Route::get('/officer/account/password', 'Officer\UserController@password')->name('officer.users.password');
 
+    Route::post('/officer/account/profile/{user}/update', 'Officer\UserController@profileUpdate')->name('officer.users.profile.update');
+    Route::post('/officer/account/profile/upload', 'Officer\UserController@upload')->name('officer.users.profile.upload');
+    Route::get('/officer/account/password', 'Officer\UserController@password')->name('officer.users.password');
+    Route::post('/officer/account/password/{user}/update', 'Officer\UserController@passwordUpdate')->name('officer.users.password.update');
+
     // Officer - comment
     Route::post('/officer/comments/store', 'Officer\CommentController@store')->name('comment.add');
     Route::post('/officer/comments/reply/store', 'Officer\CommentController@replyStore')->name('reply.add');

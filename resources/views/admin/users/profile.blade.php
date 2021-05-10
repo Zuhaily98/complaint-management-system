@@ -42,11 +42,11 @@
                             <!-- Profile picture upload button-->
                             <form action="{{ route('admin.users.profile.upload') }}" method="post" enctype="multipart/form-data">
                                 @csrf
-                                <input type="file" name="picture" class="form-control"> 
-
+                                <div class="form-group">
+                                    <input type="file" name="picture" class="form-control">
+                                </div> 
                                 <button class="btn btn-primary btn-sm" type="submit">Update Profile Picture</button>
                             </form>
-                            
                         </div>
                     </div>
                 </div>
