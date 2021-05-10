@@ -44,8 +44,8 @@
                                 </div>
                                 <!-- Form Group (new password)-->
                                 <div class="form-group">
-                                    <label class="small mb-1" for="new-password">New Password</label>
-                                    <input class="form-control" name="new-password" id="new-password" type="password"
+                                    <label class="small mb-1" for="new_password">New Password</label>
+                                    <input class="form-control" name="new_password" id="new_password" type="password"
                                         placeholder="Enter new password" />
                                 </div>
                                 <!-- Form Group (confirm password)-->

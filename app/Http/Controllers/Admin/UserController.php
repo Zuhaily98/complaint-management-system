@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+use App\Rules\MatchOldPassword;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
@@ -59,20 +60,30 @@ class UserController extends Controller
 
     public function passwordUpdate(Request $request, User $user)
     {
-        //dd($request->all());
-        $this->validate(request(), [
-            'new-password' => ['required', 'string', 'min:8', 'confirmed'],
-            'password-confirmation' => ['required', 'string', 'min:8', 'confirmed'],
+        // dd($request->all());
+        // $this->validate(request(), [
+        //     'new-password' => ['required', 'string', 'min:8', 'confirmed'],
+        //     'password-confirmation' => ['required', 'string', 'min:8', 'confirmed'],
+        // ]);
+
+        // $data = request()->only(['new-password', 'password', 'password_confirmation']);
+
+        // if ($user->password == Hash::make($data['password'])) {
+        //     $user->password = Hash::make($data['new-password']);  
+        //     $user->update($data);
+        //     dd($user);
+        //     return redirect(route('admin.users.profile'));
+        // }
+        
+        $request->validate([
+            'password' => ['required', new MatchOldPassword],
+            'new_password' => ['required'],
+            'password_confirmation' => ['same:new_password'],
         ]);
 
-        $data = request()->only(['new-password', 'password']);
-
-        if ($user->password == Hash::make($data['password'])) {
-            $user->password = Hash::make($data['new-password']);  
-            $user->update($data);
-            dd($user);
-            return redirect(route('admin.users.profile'));
-        }
+        $data = request()->only(['new-password', 'password', 'password_confirmation']);
+   
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
         
         return redirect(route('admin.users.profile'));
         
