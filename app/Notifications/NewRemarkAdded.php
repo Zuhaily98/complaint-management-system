@@ -45,7 +45,7 @@ class NewRemarkAdded extends Notification
     {
         return (new MailMessage)
                     ->line('The Crew in charge of your complaint has added a new remark.')
-                    ->action('View Complaint', route('guest.complaints.show', $this->complaint->uuid))
+                    ->action('View Complaint', route('guest.complaints.show', $this->complaint->id))
                     ->line('We will keep you in touch for future updates on you complant. Thank you!');
     }
 

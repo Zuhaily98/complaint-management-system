@@ -59,9 +59,9 @@ class Complaint extends Model
         return $this->hasMany(Attachment::class);
     }
 
-    public function getRouteKeyName()
-    {
-        return 'uuid';
-    }
+    // public function getRouteKeyName()
+    // {
+    //     return 'uuid';
+    // }
 
 }
