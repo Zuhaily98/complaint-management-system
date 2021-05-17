@@ -29,8 +29,9 @@ Route::get('/contact', function () {
 });
 Route::post('/complaints/create/dropzone-store', 'DropzoneController@dropzoneStore')->name('guest.complaints.dropzone.store');
 
-Route::post('get-states-by-country', 'AjaxController@getState')->name('get:states');
-Route::post('get-cities-by-state', 'AjaxController@getCity')->name('get:cities');
+Route::post('get-cities-by-state', 'AjaxController@getCity')->name('get.cities');
+Route::post('get-districts-by-city', 'AjaxController@getDistrict')->name('get.districts');
+Route::post('get-panels-by-district', 'AjaxController@getPanel')->name('get.panels');
 
 
 Route::middleware(['auth', 'can:admin-views'])->group(function(){

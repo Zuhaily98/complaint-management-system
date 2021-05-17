@@ -40,22 +40,40 @@
                     <div class="card-header bg-danger text-white">Select Panel</div>
                     <div class="card-body">
                         <div class="form-group">
+                            <label for="state">State :</label>
+                            <select name="state" id="state" class="form-control">
+                                <option value="">--Select State--</option>
+                                @foreach ($states as $state)
+                                    <option value="{{ $state->id }}">{{ $state->state }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="city">City :</label>
                             <select name="city" id="city" class="form-control">
-                                <option value="">--Select City--</option>
-                                @foreach ($cities as $city)
+                                {{-- <option value="">--Select City--</option> --}}
+                                {{-- @foreach ($cities as $city)
                                     <option value="{{ $city->id }}">{{ $city->city }}</option>
-                                @endforeach
+                                @endforeach --}}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="district">District :</label>
+                            <select name="district" id="district" class="form-control">
+                                {{-- <option value="">--Select district--</option> --}}
+                                {{-- @foreach ($districts as $district)
+                                    <option value="{{ $district->id }}">{{ $district->district }}</option>
+                                @endforeach --}}
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label for="panel">Panel :</label>
                             <select name="panel" id="panel" class="form-control">
-                                <option value="">--Select Panel--</option>
-                                @foreach ($panels as $panel)
+                                {{-- <option value="">--Select Panel--</option> --}}
+                                {{-- @foreach ($panels as $panel)
                                     <option value="{{ $panel->id }}">{{ $panel->name }}</option>
-                                @endforeach
+                                @endforeach --}}
                             </select>
                         </div>
                     </div>
@@ -122,36 +140,14 @@
         integrity="sha512-VQQXLthlZQO00P+uEu4mJ4G4OAgqTtKG1hri56kQY1DtdLeIqhKUp9W/lllDDu3uN3SnUNawpW7lBda8+dSi7w=="
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
-            $('#country-dropdown').on('change', function() {
-                var country_id = this.value;
-                $("#state-dropdown").html('');
-                $.ajax({
-                    url: "{{ route('get:states') }}",
-                    type: "POST",
-                    data: {
-                        country_id: country_id,
-                        _token: '{{ csrf_token() }}'
-                    },
-                    dataType: 'json',
-                    success: function(result) {
-                        $('#state-dropdown').html('<option value="">Select State</option>');
-                        $.each(result.states, function(key, value) {
-                            $("#state-dropdown").append('<option value="' + value.id +
-                                '">' + value.name + '</option>');
-                        });
-                        $('#city-dropdown').html(
-                        '<option value="">Select State First</option>');
-                    }
-                });
-            });
-            $('#state-dropdown').on('change', function() {
+            $('#state').on('change', function() {
                 var state_id = this.value;
-                $("#city-dropdown").html('');
+                $("#city").html('');
                 $.ajax({
-                    url: "{{ route('get:cities') }}",
+                    url: "{{ route('get.cities') }}",
                     type: "POST",
                     data: {
                         state_id: state_id,
@@ -159,9 +155,51 @@
                     },
                     dataType: 'json',
                     success: function(result) {
-                        $('#city-dropdown').html('<option value="">Select City</option>');
+                        $('#city').html('<option value="">Select City</option>');
                         $.each(result.cities, function(key, value) {
-                            $("#city-dropdown").append('<option value="' + value.id +
+                            $("#city").append('<option value="' + value.id +
+                                '">' + value.city + '</option>');
+                        });
+                        $('#district').html(
+                        '<option value="">Select City First</option>');
+                    }
+                });
+            });
+            $('#city').on('change', function() {
+                var city_id = this.value;
+                $("#district").html('');
+                $.ajax({
+                    url: "{{ route('get.districts') }}",
+                    type: "POST",
+                    data: {
+                        city_id: city_id,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    dataType: 'json',
+                    success: function(result) {
+                        $('#district').html('<option value="">Select District</option>');
+                        $.each(result.districts, function(key, value) {
+                            $("#district").append('<option value="' + value.id +
+                                '">' + value.district + '</option>');
+                        });
+                    }
+                });
+            });
+            $('#district').on('change', function() {
+                var district_id = this.value;
+                $("#panel").html('');
+                $.ajax({
+                    url: "{{ route('get.panels') }}",
+                    type: "POST",
+                    data: {
+                        district_id: district_id,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    dataType: 'json',
+                    success: function(result) {
+                        $('#panel').html('<option value="">Select Panel</option>');
+                        $.each(result.panels, function(key, value) {
+                            $("#panel").append('<option value="' + value.id +
                                 '">' + value.name + '</option>');
                         });
                     }
