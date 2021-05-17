@@ -90,4 +90,30 @@
             </div>
         </div>
     </form>
+{{-- 
+    <div class="container">
+        <div class="card">
+            <div class="card-header">Dropzone File Upload</div>
+            <div class="card-body">
+                <form action="{{ route('guest.complaints.dropzone.store') }}" method="post" enctype="multipart/form-data" class="dropzone dz-clickable" id="image-upload">
+                    @csrf
+                    <div>
+                        <h3 class="text-center">Click On Box To Upload Image</h3>
+                    </div>
+                    <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+                </form>
+            </div>
+        </div>
+    </div> --}}
+
+    
+@endsection
+
+@section('css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.css" integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A==" crossorigin="anonymous" />
+@endsection
+
+@section('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js" integrity="sha512-VQQXLthlZQO00P+uEu4mJ4G4OAgqTtKG1hri56kQY1DtdLeIqhKUp9W/lllDDu3uN3SnUNawpW7lBda8+dSi7w==" crossorigin="anonymous"></script>
+
 @endsection

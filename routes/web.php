@@ -27,6 +27,7 @@ Route::get('/complaints/{complaint}', 'Guest\ComplaintController@show')->name('g
 Route::get('/contact', function () {
     return view('guest.contact');
 });
+Route::post('/complaints/create/dropzone-store', 'DropzoneController@dropzoneStore')->name('guest.complaints.dropzone.store');
 
 
 Route::middleware(['auth', 'can:admin-views'])->group(function(){
