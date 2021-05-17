@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="container">
                 <div class="card card-default my-3">
                     <div class="card-header bg-danger text-white">Complainer Information</div>
@@ -44,17 +44,17 @@
                             <select name="city" id="city" class="form-control">
                                 <option value="">--Select City--</option>
                                 @foreach ($cities as $city)
-                                <option value="{{ $city->id }}">{{ $city->city }}</option>
+                                    <option value="{{ $city->id }}">{{ $city->city }}</option>
                                 @endforeach
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="panel">Panel :</label>
                             <select name="panel" id="panel" class="form-control">
                                 <option value="">--Select Panel--</option>
                                 @foreach ($panels as $panel)
-                                <option value="{{ $panel->id }}">{{ $panel->name }}</option>
+                                    <option value="{{ $panel->id }}">{{ $panel->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -69,16 +69,18 @@
                             <select name="category_id" id="category_id" class="form-control">
                                 <option value="">--Select Category--</option>
                                 @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                    <option value="{{ $category->id }}">{{ $category->title }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="detail">Details :</label>
-                            <textarea name="detail" id="detail" cols="5" rows="5" class="form-control" placeholder="Write your complaint here..."></textarea>
+                            <textarea name="detail" id="detail" cols="5" rows="5" class="form-control"
+                                placeholder="Write your complaint here..."></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="">Attachment : </label><div class="form-group">
+                            <label for="">Attachment : </label>
+                            <div class="form-group">
                                 <input type="file" name="attachment" class="form-control">
                             </div>
                         </div>
@@ -86,12 +88,11 @@
                 </div>
 
                 <button class="btn btn-success float-right" type="submit">Submit</button>
-                
+
             </div>
         </div>
     </form>
-{{-- 
-    <div class="container">
+    {{-- <div class="container">
         <div class="card">
             <div class="card-header">Dropzone File Upload</div>
             <div class="card-body">
@@ -106,14 +107,67 @@
         </div>
     </div> --}}
 
-    
+
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.css" integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.css"
+        integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 @endsection
 
 @section('js')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js" integrity="sha512-VQQXLthlZQO00P+uEu4mJ4G4OAgqTtKG1hri56kQY1DtdLeIqhKUp9W/lllDDu3uN3SnUNawpW7lBda8+dSi7w==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"
+        integrity="sha512-VQQXLthlZQO00P+uEu4mJ4G4OAgqTtKG1hri56kQY1DtdLeIqhKUp9W/lllDDu3uN3SnUNawpW7lBda8+dSi7w=="
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $('#country-dropdown').on('change', function() {
+                var country_id = this.value;
+                $("#state-dropdown").html('');
+                $.ajax({
+                    url: "{{ route('get:states') }}",
+                    type: "POST",
+                    data: {
+                        country_id: country_id,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    dataType: 'json',
+                    success: function(result) {
+                        $('#state-dropdown').html('<option value="">Select State</option>');
+                        $.each(result.states, function(key, value) {
+                            $("#state-dropdown").append('<option value="' + value.id +
+                                '">' + value.name + '</option>');
+                        });
+                        $('#city-dropdown').html(
+                        '<option value="">Select State First</option>');
+                    }
+                });
+            });
+            $('#state-dropdown').on('change', function() {
+                var state_id = this.value;
+                $("#city-dropdown").html('');
+                $.ajax({
+                    url: "{{ route('get:cities') }}",
+                    type: "POST",
+                    data: {
+                        state_id: state_id,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    dataType: 'json',
+                    success: function(result) {
+                        $('#city-dropdown').html('<option value="">Select City</option>');
+                        $.each(result.cities, function(key, value) {
+                            $("#city-dropdown").append('<option value="' + value.id +
+                                '">' + value.name + '</option>');
+                        });
+                    }
+                });
+            });
+        });
 
+    </script>
 @endsection
