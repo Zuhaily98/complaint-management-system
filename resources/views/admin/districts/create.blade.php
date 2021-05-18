@@ -40,7 +40,7 @@
                         </div>
                         <!-- Form Group ( state )-->
                         <div class="form-group">
-                            <select name="state_id" id="state_id" class="form-control">
+                            <select name="state_id" id="state" class="form-control">
                                 <option value="">--Select State--</option>
                                 @foreach ($states as $state)
                                     <option value="{{ $state->id }}">{{ $state->state }}</option>
@@ -57,11 +57,7 @@
                         </div>
                         <!-- Form Group (city)-->
                         <div class="form-group">
-                            <select name="city_id" id="city_id" class="form-control">
-                                <option value="">--Select City--</option>
-                                @foreach ($cities as $city)
-                                    <option value="{{ $city->id }}">{{ $city->city }}</option>
-                                @endforeach
+                            <select name="city_id" id="city" class="form-control">
                             </select>
                         </div>
                         <!-- Form Group ( district )-->
@@ -77,4 +73,39 @@
         </div>
     </main>
 
+@endsection
+
+@section('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"
+        integrity="sha512-VQQXLthlZQO00P+uEu4mJ4G4OAgqTtKG1hri56kQY1DtdLeIqhKUp9W/lllDDu3uN3SnUNawpW7lBda8+dSi7w=="
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#state').on('change', function() {
+                var state_id = this.value;
+                $("#city").html('');
+                $.ajax({
+                    url: "{{ route('get.cities') }}",
+                    type: "POST",
+                    data: {
+                        state_id: state_id,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    dataType: 'json',
+                    success: function(result) {
+                        $('#city').html('<option value="">Select City</option>');
+                        $.each(result.cities, function(key, value) {
+                            $("#city").append('<option value="' + value.id +
+                                '">' + value.city + '</option>');
+                        });
+                        $('#district').html(
+                        '<option value="">Select City First</option>');
+                    }
+                });
+            });
+        });
+
+    </script>
 @endsection
