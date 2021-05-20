@@ -58,8 +58,8 @@ class NewRemarkAdded extends Notification
     public function toArray($notifiable)
     {
         return [
-            // 'data' => 'New Remark added'
-            'complaint' -> $this->complaint
+            'data' => 'New Remark added'
+            //'complaint' -> $this->complaint
         ];
     }
 }
