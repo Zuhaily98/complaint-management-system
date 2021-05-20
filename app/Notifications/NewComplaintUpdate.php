@@ -58,8 +58,7 @@ class NewComplaintUpdate extends Notification
     public function toArray($notifiable)
     {
         return [
-            // 'data' => 'New omplaint details update'
-            'complaint' -> $this->complaint
+            'complaint' => $this->complaint
         ];
     }
 }
