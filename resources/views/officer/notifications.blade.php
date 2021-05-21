@@ -13,13 +13,13 @@
                     <li class="list-group-item">
                         @if ($notification->type == "App\Notifications\NewRemarkAdded")
                             A new remark was added to complaint
-                            {{ $notification->data['complaint']['detail'] }}
+                            {{-- {{ $notification->data['complaint']['detail'] }} --}}
                             <a href="" class="btn btn-sm btn-info float-right">View Complaint</a>
                         @endif
 
                         @if ($notification->type == "App\Notifications\NewComplaintUpdate")
                             A new changes was updated to complaint
-                            {{ $notification->data['complaint']['detail'] }}
+                            {{-- {{ $notification->data['complaint']['detail'] }} --}}
                             <a href="" class="btn btn-sm btn-info float-right">View Complaint</a>
                         @endif
                     </li>
