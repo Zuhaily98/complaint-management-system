@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +85,9 @@ Route::middleware(['auth', 'can:admin-views'])->group(function(){
     Route::get('/admin/districts', 'Admin\DistrictController@index')->name('admin.districts.index');
     Route::get('/admin/districts/create', 'Admin\DistrictController@create')->name('admin.districts.create');
     Route::post('/admin/districts/create', 'Admin\DistrictController@store')->name('admin.districts.store');
+
+    // Admin - notification
+    Route::get('admin/notifications', [UserController::class, 'notifications'])->name('admin.notifications');
 });
 
 
@@ -111,6 +115,9 @@ Route::middleware(['auth', 'can:officer-views'])->group(function(){
     // Officer - comment
     Route::post('/officer/comments/store', 'Officer\CommentController@store')->name('comment.add');
     Route::post('/officer/comments/reply/store', 'Officer\CommentController@replyStore')->name('reply.add');
+
+    // Officer - notification
+    Route::get('officer/notifications', [UserController::class, 'notifications'])->name('officer.notifications');
 });
 
 

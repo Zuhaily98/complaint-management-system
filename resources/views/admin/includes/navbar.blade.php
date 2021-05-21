@@ -18,7 +18,7 @@
             <div class="dropdown-menu dropdown-menu-right border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownAlerts">
                 <h6 class="dropdown-header dropdown-notifications-header">
                     <i class="mr-2" data-feather="bell"></i>
-                    Alerts Center
+                    Notification <span class="badge badge-warning"> {{ auth()->user()->unreadNotifications->count() }}</span>
                 </h6>
                 <!-- Example Alert 1-->
                 <a class="dropdown-item dropdown-notifications-item" href="#!">
@@ -36,23 +36,7 @@
                         <div class="dropdown-notifications-item-content-text">A new monthly report is ready. Click here to view!</div>
                     </div>
                 </a>
-                <!-- Example Alert 3-->
-                <a class="dropdown-item dropdown-notifications-item" href="#!">
-                    <div class="dropdown-notifications-item-icon bg-danger"><i class="fas fa-exclamation-triangle"></i></div>
-                    <div class="dropdown-notifications-item-content">
-                        <div class="dropdown-notifications-item-content-details">December 8, 2020</div>
-                        <div class="dropdown-notifications-item-content-text">Critical system failure, systems shutting down.</div>
-                    </div>
-                </a>
-                <!-- Example Alert 4-->
-                <a class="dropdown-item dropdown-notifications-item" href="#!">
-                    <div class="dropdown-notifications-item-icon bg-success"><i data-feather="user-plus"></i></div>
-                    <div class="dropdown-notifications-item-content">
-                        <div class="dropdown-notifications-item-content-details">December 2, 2020</div>
-                        <div class="dropdown-notifications-item-content-text">New user request. Woody has requested access to the organization.</div>
-                    </div>
-                </a>
-                <a class="dropdown-item dropdown-notifications-footer" href="#!">View All Alerts</a>
+                <a class="dropdown-item dropdown-notifications-footer" href="#!">View All Notification</a>
             </div>
         </li>
         <!-- User Dropdown-->
