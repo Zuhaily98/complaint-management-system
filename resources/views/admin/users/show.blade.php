@@ -31,6 +31,8 @@
                             <!-- Profile picture image-->
                             <img class="img-account-profile rounded-circle mb-2"
                                 src="{{ env('APP_URL') }}/storage/{{ $user->picture }}" alt="" />
+                            
+                            <br><a href="{{ env('APP_URL') }}/storage/{{ $user->picture }}" target="_blank">Open Picture</a>
                                 
                         </div>
                     </div>

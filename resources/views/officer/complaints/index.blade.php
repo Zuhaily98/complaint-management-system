@@ -54,7 +54,7 @@
                                     @endif
                                 </td>
                                 <td>{{ $complaint->created_at->diffForHumans() }}</td>
-                                <td><a href="{{ route('officer.complaints.show', $complaint->id) }}" class="badge badge-info">See More</a></td>
+                                <td><a href="{{ route('officer.complaints.show', $complaint) }}" class="badge badge-info">See More</a></td>
                             </tr>
                             @endif
                         @endforeach

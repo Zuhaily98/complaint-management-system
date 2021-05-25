@@ -62,7 +62,7 @@
             </div>
 
             <div class="form-group">
-                <a href="{{ route('admin.complaints.edit', $complaint->id) }}" type="submit" class="btn btn-secondary">Edit</a>
+                <a href="{{ route('admin.complaints.edit', $complaint) }}" type="submit" class="btn btn-secondary">Edit</a>
                 <a href="" class="btn btn-primary">Back</a>
             </div>
         </div>

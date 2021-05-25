@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/complaints', 'Guest\ComplaintController@index')->name('guest.index');
 Route::get('/complaints/create', 'Guest\ComplaintController@create')->name('guest.create');
 Route::post('/complaints', 'Guest\ComplaintController@store')->name('guest.complaints.store');
-Route::get('/complaints/{complaint}', 'Guest\ComplaintController@show')->name('guest.complaints.show');
+Route::get('/complaints/{complaint:uuid}', 'Guest\ComplaintController@show')->name('guest.complaints.show');
 Route::get('/contact', function () {
     return view('guest.contact');
 });
@@ -40,9 +40,9 @@ Route::middleware(['auth', 'can:admin-views'])->group(function(){
 
     // Admin - complaint
     Route::get('/admin/complaints', 'Admin\ComplaintController@index')->name('admin.complaints');
-    Route::get('/admin/complaints/{complaint}', 'Admin\ComplaintController@show')->name('admin.complaints.show');
-    Route::get('/admin/complaints/{complaint}/edit', 'Admin\ComplaintController@edit')->name('admin.complaints.edit');
-    Route::post('/admin/complaints/{complaint}/update', 'Admin\ComplaintController@update')->name('admin.complaints.update');
+    Route::get('/admin/complaints/{complaint:uuid}', 'Admin\ComplaintController@show')->name('admin.complaints.show');
+    Route::get('/admin/complaints/{complaint:uuid}/edit', 'Admin\ComplaintController@edit')->name('admin.complaints.edit');
+    Route::post('/admin/complaints/{complaint:uuid}/update', 'Admin\ComplaintController@update')->name('admin.complaints.update');
 
     // Admin - account
     Route::get('/admin/users', 'Admin\UserController@index')->name('admin.users.index');
@@ -57,7 +57,7 @@ Route::middleware(['auth', 'can:admin-views'])->group(function(){
     Route::get('/admin/users/password', 'Admin\UserController@password')->name('admin.users.password');
     Route::post('/admin/users/password/{user}/update', 'Admin\UserController@passwordUpdate')->name('admin.users.password.update');
 
-    Route::get('/admin/users/{user}', 'Admin\UserController@show')->name('admin.users.show');
+    Route::get('/admin/users/{user:uuid}', 'Admin\UserController@show')->name('admin.users.show');
     
 
     // Admin - panel
@@ -98,9 +98,9 @@ Route::middleware(['auth', 'can:officer-views'])->group(function(){
     Route::get('/officer/complaints', 'Officer\ComplaintController@index')->name('officer.complaints.index'); 
     Route::get('/officer/complaints/pick', 'Officer\ComplaintController@pick')->name('officer.complaints.pick');
     Route::post('/officer/complaints/{complaint}/select', 'Officer\ComplaintController@select')->name('officer.complaints.select');
-    Route::get('/officer/complaints/{complaint}', 'Officer\ComplaintController@show')->name('officer.complaints.show');
-    Route::get('/officer/complaints/{complaint}/edit', 'Officer\ComplaintController@edit')->name('officer.complaints.edit');
-    Route::post('/officer/complaints/{complaint}/update', 'Officer\ComplaintController@update')->name('officer.complaints.update');
+    Route::get('/officer/complaints/{complaint:uuid}', 'Officer\ComplaintController@show')->name('officer.complaints.show');
+    Route::get('/officer/complaints/{complaint:uuid}/edit', 'Officer\ComplaintController@edit')->name('officer.complaints.edit');
+    Route::post('/officer/complaints/{complaint:uuid}/update', 'Officer\ComplaintController@update')->name('officer.complaints.update');
 
     // Officer - account
     Route::get('/officer/account/profile', 'Officer\UserController@profile')->name('officer.users.profile');

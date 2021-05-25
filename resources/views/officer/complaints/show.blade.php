@@ -77,7 +77,7 @@
             </div>
 
             <div class="form-group">
-                <a href="{{ route('officer.complaints.edit', $complaint->id) }}" type="submit"
+                <a href="{{ route('officer.complaints.edit', $complaint) }}" type="submit"
                     class="btn btn-secondary">Edit</a>
                 <a href="" class="btn btn-primary">Back</a>
             </div>

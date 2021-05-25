@@ -56,7 +56,7 @@
                                 </td>
                                 <td>{{ $complaint->created_at->diffForHumans() }}</td>
                                 <td>{{ $complaint->user ? $complaint->user->name : 'Not Assigned' }}</td> <!-- Using Ternary to check there is user id or not -->
-                                <td><a href="{{ route('admin.complaints.show', $complaint->id) }}" class="badge badge-info">See More</a></td>
+                                <td><a href="{{ route('admin.complaints.show', $complaint) }}" class="badge badge-info">See More</a></td>
                             </tr>
                         @endforeach
                        
