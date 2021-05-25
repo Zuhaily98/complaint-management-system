@@ -8,7 +8,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use App\Models\Complaint;
 
-class NewRemarkAdded extends Notification
+class NewRemarkAdded extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -45,7 +45,7 @@ class NewRemarkAdded extends Notification
     {
         return (new MailMessage)
                     ->line('The Crew in charge of your complaint has added a new remark.')
-                    ->action('View Complaint', route('guest.complaints.show', $this->complaint->id))
+                    ->action('View Complaint', route('guest.complaints.show', $this->complaint))
                     ->line('We will keep you in touch for future updates on you complant. Thank you!');
     }
 
@@ -58,7 +58,8 @@ class NewRemarkAdded extends Notification
     public function toArray($notifiable)
     {
         return [
-            'data' => 'A new remark was added by crew ' , $this->complaint->detail
+            // 'data' => 'A new remark was added by crew ' , $this->complaint->detail
+            'data' => 'A new remark was added by crew'
         ];
     }
 }

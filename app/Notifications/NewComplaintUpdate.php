@@ -8,7 +8,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use App\Models\Complaint;
 
-class NewComplaintUpdate extends Notification
+class NewComplaintUpdate extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -45,7 +45,7 @@ class NewComplaintUpdate extends Notification
     {
         return (new MailMessage)
                     ->line('Greetings. We have updated your complaint. Please Click on the button below to view changes')
-                    ->action('View Complaint', route('guest.complaints.show', $this->complaint->id))
+                    ->action('View Complaint', route('guest.complaints.show', $this->complaint))
                     ->line('Thank you for your patient and for trusting application services!');
     }
 
