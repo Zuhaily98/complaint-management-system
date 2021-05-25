@@ -8,7 +8,7 @@
         <meta name="author" content="" />
         <title>@yield('title')</title>
         <link href="{{ asset('admin/css/styles.css') }}" rel="stylesheet" />
-        <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/img/favicon.png') }}" />
+        <link rel="icon" type="image/x-icon" href="https://res-4.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco/o0yvvdlumh0rghybj9kx" />
         <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
     </head>

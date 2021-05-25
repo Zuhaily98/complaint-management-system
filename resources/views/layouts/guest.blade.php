@@ -79,7 +79,7 @@
     <!-- LOADER -->
     <div id="preloader">
        <div class="loader">
-          <img style="width: 150%" src="https://cdn.dribbble.com/users/765253/screenshots/2540865/loader.gif" alt="#" />
+          <img style="width: 100%" src="https://cdn.dribbble.com/users/765253/screenshots/2540865/loader.gif" alt="#" />
        </div>
     </div>
     <!-- END LOADER -->
@@ -144,7 +144,7 @@
 
                 <div class="col-lg-3 col-md-6 col-sm-6 white_fonts">
                    <div class="full footer_blog f_icon_3">
-                       <p>Email<br><small>mymedkad@medkad.com<br>24 X 7 online support</small></p>
+                       <p>Email<br><small>noreply@comsys.medkad.com<br>Monday - Sunday<br>Online support</small></p>
                    </div>
                 </div>
 
@@ -152,7 +152,16 @@
                    <div class="full footer_blog_last">
                        <p>Staff Login</p>
                        <p>
-                         <a href="/login" class="btn btn-primary btn-sm">Login</a>
+                        @auth
+                           @if(Auth::user()->isAdmin())
+                              <a href="{{route('admin.dashboard')}}" class="btn btn-primary btn-sm">Admin Page</a>
+                           @elseif(Auth::user()->isOfficer())
+                              <a href="{{ route('officer.dashboard') }}" class="btn btn-danger btn-sm">Crew Page</a>
+                           @endif 
+                        @endauth  
+                        @guest
+                           <a href="/login" class="btn btn-info btn-sm">Login</a>  
+                        @endguest
                        </p>
                    </div>
                 </div>
