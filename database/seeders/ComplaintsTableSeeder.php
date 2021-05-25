@@ -16,6 +16,7 @@ class ComplaintsTableSeeder extends Seeder
     {
         Complaint::create([
             'user_id' => '3',
+            'uuid' => \Illuminate\Support\Str::uuid(),
             'guest_id' => '1',
             'category_id' => '1',
             'panel_id' => '1',
@@ -26,6 +27,7 @@ class ComplaintsTableSeeder extends Seeder
 
         Complaint::create([
             'user_id' => '4',
+            'uuid' => \Illuminate\Support\Str::uuid(),
             'guest_id' => '2',
             'category_id' => '2',
             'panel_id' => '2',
@@ -36,6 +38,7 @@ class ComplaintsTableSeeder extends Seeder
 
         Complaint::create([
             'user_id' => null,
+            'uuid' => \Illuminate\Support\Str::uuid(),
             'guest_id' => '3',
             'category_id' => '2',
             'panel_id' => '3',

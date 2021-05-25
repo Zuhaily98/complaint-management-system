@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
     {
         User::create([
             'name' => 'Admin Ahmad',
+            'uuid' => \Illuminate\Support\Str::uuid(),
             'email' => 'admin@medkad.com',
             'role' => 'admin',
             'password' => Hash::make('admin@medkad.com')
@@ -24,6 +25,7 @@ class UsersTableSeeder extends Seeder
 
         User::create([
             'name' => 'Admin Iman',
+            'uuid' => \Illuminate\Support\Str::uuid(),
             'email' => 'iman@medkad.com',
             'role' => 'admin',
             'password' => Hash::make('iman@medkad.com')
@@ -31,6 +33,7 @@ class UsersTableSeeder extends Seeder
 
         User::create([
             'name' => 'Officer Abu',
+            'uuid' => \Illuminate\Support\Str::uuid(),
             'email' => 'crew@medkad.com',
             'role' => 'officer',
             'password' => Hash::make('crew@medkad.com')
@@ -38,6 +41,7 @@ class UsersTableSeeder extends Seeder
 
         User::create([
             'name' => 'Officer Adib',
+            'uuid' => \Illuminate\Support\Str::uuid(),
             'email' => 'adib@medkad.com',
             'role' => 'officer',
             'password' => Hash::make('adib@medkad.com')
