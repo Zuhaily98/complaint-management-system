@@ -18,7 +18,7 @@
             <div class="dropdown-menu dropdown-menu-right border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownAlerts">
                 <h6 class="dropdown-header dropdown-notifications-header">
                     <i class="mr-2" data-feather="bell"></i>
-                    Notification <span class="badge badge-warning"> {{ auth()->user()->unreadNotifications->count() }}</span>
+                    Unread Notification <strong> <span class="badge badge-warning">{{ auth()->user()->unreadNotifications->count() }}</span> </strong>
                 </h6>
                 <!-- Example Alert 1-->
                 <a class="dropdown-item dropdown-notifications-item" href="#!">
