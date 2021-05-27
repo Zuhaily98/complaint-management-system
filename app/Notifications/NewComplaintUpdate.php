@@ -58,7 +58,7 @@ class NewComplaintUpdate extends Notification implements ShouldQueue
     public function toArray($notifiable)
     {
         return [
-            'complaint' => $this->complaint
+            'data' => 'A complaint detail has been updated'
         ];
     }
 }

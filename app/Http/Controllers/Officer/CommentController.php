@@ -29,7 +29,7 @@ class CommentController extends Controller
         // dd($comment);    
         $complaint->comments()->save($comment);
 
-        $complaint->guest->notify(new NewRemarkAdded($complaint));
+        $complaint->user->notify(new NewRemarkAdded($complaint));
         
         return back();
     }
@@ -49,7 +49,7 @@ class CommentController extends Controller
         $reply->complaint_id = $complaint->id;
         $complaint->comments()->save($reply);
 
-        $complaint->guest->notify(new NewRemarkAdded($complaint));
+        $complaint->user->notify(new NewRemarkAdded($complaint));
 
         return back();
     }

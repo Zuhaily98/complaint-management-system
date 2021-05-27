@@ -76,4 +76,12 @@ class ComplaintController extends Controller
         //redirect
         return view('guest.message');
     }
+
+    public function search(Request $request)
+    {
+        $search = Complaint::where("uuid", "like", "%".$request->uuid."%")->get();
+
+        dd($search);
+        return view('guest.index')->with('uuid', Complaint::where("uuid", $uuid)->get());
+    }
 }
